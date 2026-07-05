@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
+// Node.js runtime (the default) rather than edge: the edge bundle for this
+// route pushed past Vercel's 1 MB Hobby-plan Edge Function limit.
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
