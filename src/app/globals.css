@@ -1,0 +1,253 @@
+@import "tailwindcss";
+
+/*
+  Fresco AI brand tokens — lifted from the shipping product (constants/theme.ts
+  and the Sprint 3 admin-app export), not invented for the marketing site.
+  Violet is the primary brand/action color in both themes; teal is the
+  secondary "positive / completed" accent, echoing the app's own status colors.
+*/
+
+:root {
+  --background: #ffffff;
+  --surface: #faf9f5;
+  --surface-2: #f1f0ec;
+  --foreground: #1c1917;
+  --muted-foreground: #57534e;
+  --faint-foreground: #78716c;
+  --border: #e7e5e4;
+  --border-strong: #d6d3d0;
+
+  --primary: #6d28d9;
+  --primary-hover: #5b21b6;
+  --primary-foreground: #ffffff;
+  --primary-tint: #ede9fe;
+
+  --accent: #0f766e;
+  --accent-bright: #14b8a6;
+  --accent-foreground: #ffffff;
+  --accent-tint: #f0fdfa;
+
+  --warning: #92500e;
+  --warning-bg: #fef6d9;
+  --warning-border: #fbd566;
+
+  --danger: #be123c;
+  --danger-bg: #fee7e9;
+  --danger-border: #f6a9b4;
+
+  --card-navy-start: #1a1033;
+  --card-navy-end: #05060a;
+
+  --shadow-color: 220 20% 10%;
+}
+
+.dark {
+  --background: #0a0f1a;
+  --surface: #111827;
+  --surface-2: #1f2937;
+  --foreground: #f9fafb;
+  --muted-foreground: #9ca3af;
+  --faint-foreground: #6b7280;
+  --border: #1f2937;
+  --border-strong: #374151;
+
+  --primary: #7c3aed;
+  --primary-hover: #8b5cf6;
+  --primary-foreground: #ffffff;
+  --primary-tint: rgba(167, 139, 250, 0.12);
+
+  --accent: #5eead4;
+  --accent-bright: #2dd4bf;
+  --accent-foreground: #04211d;
+  --accent-tint: rgba(45, 212, 191, 0.1);
+
+  --warning: #fbbf24;
+  --warning-bg: rgba(66, 32, 6, 0.55);
+  --warning-border: rgba(251, 191, 36, 0.35);
+
+  --danger: #fb7185;
+  --danger-bg: rgba(76, 5, 25, 0.4);
+  --danger-border: rgba(225, 29, 72, 0.3);
+
+  --card-navy-start: #1a1033;
+  --card-navy-end: #05060a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-faint-foreground: var(--faint-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-tint: var(--primary-tint);
+
+  --color-accent: var(--accent);
+  --color-accent-bright: var(--accent-bright);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-tint: var(--accent-tint);
+
+  --color-warning: var(--warning);
+  --color-warning-bg: var(--warning-bg);
+  --color-warning-border: var(--warning-border);
+
+  --color-danger: var(--danger);
+  --color-danger-bg: var(--danger-bg);
+  --color-danger-border: var(--danger-border);
+
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-mono-brand);
+
+  --animate-marquee: marquee 32s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.bg-grid-fresco {
+  background-size: 56px 56px;
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--foreground) 6%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--foreground) 6%, transparent) 1px,
+      transparent 1px
+    );
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 0%, transparent 75%);
+}
+
+.film-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  opacity: 0.045;
+  mix-blend-mode: overlay;
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%25" height="100%25" filter="url(%23n)"/></svg>');
+}
+
+.text-gradient-brand {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-bright) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.premium-depth-card {
+  background: linear-gradient(150deg, var(--card-navy-start) 0%, var(--card-navy-end) 100%);
+  box-shadow:
+    0 40px 100px -20px rgba(0, 0, 0, 0.85),
+    0 20px 40px -20px rgba(0, 0, 0, 0.7),
+    inset 0 1px 2px rgba(255, 255, 255, 0.15),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+}
+
+.card-sheen {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 50;
+  background: radial-gradient(
+    800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.07) 0%,
+    transparent 40%
+  );
+  mix-blend-mode: screen;
+}
+
+.iphone-bezel {
+  background-color: #111;
+  box-shadow:
+    inset 0 0 0 2px #3f3f46,
+    inset 0 0 0 7px #000,
+    0 40px 80px -15px rgba(0, 0, 0, 0.9),
+    0 15px 25px -5px rgba(0, 0, 0, 0.7);
+  transform-style: preserve-3d;
+}
+
+.hardware-btn {
+  background: linear-gradient(90deg, #404040 0%, #171717 100%);
+  box-shadow:
+    -2px 0 5px rgba(0, 0, 0, 0.8),
+    inset -1px 0 1px rgba(255, 255, 255, 0.15),
+    inset 1px 0 2px rgba(0, 0, 0, 0.8);
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.screen-glare {
+  background: linear-gradient(110deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 45%);
+}
+
+.widget-depth {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.01) 100%);
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.06),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.floating-ui-badge {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.01) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  isolation: isolate;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 25px 50px -12px rgba(0, 0, 0, 0.8),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.gsap-reveal {
+  visibility: hidden;
+}
