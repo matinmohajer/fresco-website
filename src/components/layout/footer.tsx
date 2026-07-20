@@ -7,7 +7,8 @@ const COLUMNS = [
     title: "Product",
     links: [
       { href: "/#how-it-works", label: "How It Works" },
-      { href: "/#platform", label: "Admin & Worker Apps" },
+      { href: "/#platform", label: "Admin & Team Apps" },
+      { href: "/#schedule", label: "Schedule" },
       { href: "/#who-its-for", label: "Who It's For" },
       { href: "/#availability", label: "Availability" },
     ],
@@ -34,8 +35,9 @@ export function Footer() {
           <div className="col-span-2 flex flex-col gap-4">
             <Logo />
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Field reports that write themselves. AI-native voice-to-report
-              generation with a real admin review-and-approve workflow.
+              To Do Lists that create themselves — and sign themselves off.
+              A deterministic engine turns a spoken walk-through into a
+              dispatched, verified sign-off report.
             </p>
             <p className="text-xs text-faint-foreground">
               Fresco AI is developed and operated by XARP, a California

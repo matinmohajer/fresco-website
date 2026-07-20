@@ -1,37 +1,37 @@
-import { CheckSquare, Mic2, Sparkles, ShieldCheck, ListTodo } from "lucide-react";
+import { Mic2, ListTree, Send, CheckSquare, FileCheck } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 const STEPS = [
   {
     number: "01",
-    icon: CheckSquare,
-    title: "Check In",
-    description: "Team members check in to a site or job visit directly from the Fresco AI worker app.",
+    icon: Mic2,
+    title: "Create",
+    description: "A manager, supervisor, or foreman builds a To Do List by voice, text, or annotated photo in the Admin app. No forms.",
   },
   {
     number: "02",
-    icon: Mic2,
-    title: "Capture",
-    description: "Record a voice note describing the work, snap photos, or shoot a short video. No forms to fill out in the field.",
+    icon: ListTree,
+    title: "Structure",
+    description: "The deterministic engine transcribes and organizes it into a consistent, itemized list — the same clean structure every time.",
   },
   {
     number: "03",
-    icon: Sparkles,
-    title: "AI Processing",
-    description: "Fresco AI transcribes and analyzes the input, generating a structured report: work summary, task list, timeline, and any flagged issues or follow-up items.",
+    icon: Send,
+    title: "Send",
+    description: "Assign the list to the responsible team member. They get a text with a secure link — nothing to install to get started.",
   },
   {
     number: "04",
-    icon: ShieldCheck,
-    title: "Review & Approve",
-    description: "Supervisors and admins review AI-drafted reports in the admin app, request changes if needed, and approve finished work — with a clear audit trail from first submission to sign-off.",
+    icon: CheckSquare,
+    title: "Complete & Sign Off",
+    description: "Each task is checked done or not done, with spoken reasons and photos for anything incomplete — can't check out until all are addressed.",
   },
   {
     number: "05",
-    icon: ListTodo,
-    title: "Track & Assign",
-    description: "Approved reports convert into trackable tasks with owners and due dates, so nothing falls through the cracks between visits.",
+    icon: FileCheck,
+    title: "Return",
+    description: "Fresco AI compiles a verified report — photos, reasons, timestamps, completion certificate — sent back automatically.",
   },
 ];
 
@@ -40,9 +40,9 @@ export function HowItWorks() {
     <section id="how-it-works" className="scroll-mt-24 border-t border-border py-24 sm:py-32">
       <Container>
         <SectionHeading
-          eyebrow="How It Works"
-          title="From the job site to a signed-off report."
-          description="Five steps, most of them automatic. The only thing a worker does is check in, talk, and shoot a few photos."
+          eyebrow="How Fresco AI Works"
+          title="Scan. Structure. Sign off."
+          description="Five steps, most of them automatic. The only thing a team member does is open the link, work the list, and sign off."
         />
 
         <div className="relative mt-20">

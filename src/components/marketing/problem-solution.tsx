@@ -1,28 +1,36 @@
-import { Camera, Clock, MessageSquareOff, Search, Mic, FileCheck, Check, ArrowUpRight } from "lucide-react";
+import { MicOff, Camera, Clock, FileQuestion, Mic, ListTree, Send, ShieldCheck, FileCheck } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 const PROBLEMS = [
   {
-    icon: Clock,
-    title: "Hours lost every week",
-    description: "Field teams lose hours writing up work they already did, after the fact, from memory.",
+    icon: MicOff,
+    title: "Dictated, then lost",
+    description: "To Do Lists get spoken in the field and never make it cleanly to the crew.",
   },
   {
     icon: Camera,
-    title: "Photos with no home",
-    description: "Photos sit in camera rolls, disconnected from the job they document.",
+    title: "No proof of done",
+    description: "Work is handed off verbally, with nothing to show it was actually completed.",
   },
   {
-    icon: MessageSquareOff,
-    title: "Details get dropped",
-    description: "Verbal updates get relayed secondhand, and the important details don't survive the handoff.",
+    icon: Clock,
+    title: "Chasing status",
+    description: "Supervisors chase updates instead of reviewing finished work.",
   },
   {
-    icon: Search,
-    title: "Supervisors chase status",
-    description: "Managers spend their day chasing down what happened instead of reviewing finished work.",
+    icon: FileQuestion,
+    title: "No record for the ask",
+    description: "When a client or inspector wants a record, there isn't one.",
   },
+];
+
+const ENGINE_STEPS = [
+  { icon: Mic, title: "Speak or snap", description: "Voice, text, or annotated photo — no forms." },
+  { icon: ListTree, title: "Structure", description: "Deterministic engine builds a consistent list." },
+  { icon: Send, title: "Dispatch", description: "Sent to the right team member as a secure text link." },
+  { icon: ShieldCheck, title: "Sign off", description: "Each task closed with proof, even offline." },
+  { icon: FileCheck, title: "Verified report", description: "Returns automatically to everyone who needs it." },
 ];
 
 export function ProblemSolution() {
@@ -31,8 +39,8 @@ export function ProblemSolution() {
       <Container>
         <SectionHeading
           eyebrow="The Problem"
-          title="Field documentation is stuck in the last decade."
-          description="Field teams do skilled, accountable work — then lose the rest of the day writing it up."
+          title="Field work gets lost between the walk-through and the crew."
+          description="Field teams do skilled, accountable work — then the To Do List gets lost somewhere between the walk-through and the work getting done."
         />
 
         <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
@@ -52,60 +60,36 @@ export function ProblemSolution() {
               The Solution
             </span>
             <h3 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-              Built around how field work actually happens.
+              The missing loop between assigning work and proving it&apos;s done.
             </h3>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              Fresco AI is a mobile-first reporting and work-track platform
-              built for how the job really gets documented: out loud, on-site,
-              in the moment.
+              A manager speaks or photographs what needs doing. Fresco
+              AI&apos;s deterministic engine turns it into a clean, itemized
+              To Do List.
             </p>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              A worker checks in at a site, talks through what they did, and
-              captures a few photos or a short video. Fresco AI&apos;s AI
-              engine converts that raw input into a clean, structured report —
-              complete with a summary, itemized tasks, and suggested
-              follow-ups — ready for a supervisor to review and approve.
+              The team member completes it with proof — a photo or a spoken
+              reason for anything incomplete — and a verified report returns
+              automatically to everyone who needs it.
             </p>
           </div>
 
-          <div className="relative rounded-3xl border border-border bg-background p-8 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)]">
-            <div className="flex items-center gap-3 border-b border-border pb-5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary-tint">
-                <Mic className="h-4 w-4 text-primary" />
-              </span>
-              <div>
-                <p className="text-sm font-semibold text-foreground">Raw field input</p>
-                <p className="text-xs text-muted-foreground">Voice · Photos · Video</p>
+          <div className="relative flex flex-col gap-3 rounded-3xl border border-border-strong bg-linear-to-br from-primary to-primary-hover p-3 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.35)]">
+            {ENGINE_STEPS.map(({ icon: Icon, title, description }, i) => (
+              <div
+                key={title}
+                className="flex items-center gap-4 rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm"
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-sm font-bold text-primary">
+                  {i + 1}
+                </span>
+                <Icon className="h-4 w-4 shrink-0 text-white/70" strokeWidth={1.75} />
+                <div>
+                  <p className="text-sm font-bold text-white">{title}</p>
+                  <p className="text-xs leading-snug text-white/70">{description}</p>
+                </div>
               </div>
-            </div>
-            <p className="mt-5 rounded-2xl bg-surface-2 p-4 text-sm italic leading-relaxed text-muted-foreground">
-              &ldquo;Replaced the condenser fan motor on unit two, cleared the
-              drain line, tenant said the breaker trips sometimes in the
-              afternoon — might want to send someone to look at the panel.&rdquo;
-            </p>
-            <div className="mt-6 flex items-center gap-3 border-b border-t border-border py-5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent-tint">
-                <FileCheck className="h-4 w-4 text-accent" />
-              </span>
-              <div>
-                <p className="text-sm font-semibold text-foreground">Structured report</p>
-                <p className="text-xs text-muted-foreground">Generated automatically</p>
-              </div>
-            </div>
-            <ul className="mt-5 flex flex-col gap-3 text-sm text-foreground">
-              <li className="flex items-start gap-2.5">
-                <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                Replaced condenser fan motor, unit 2
-              </li>
-              <li className="flex items-start gap-2.5">
-                <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                Cleared condensate drain line
-              </li>
-              <li className="flex items-start gap-2.5 text-muted-foreground">
-                <ArrowUpRight className="mt-0.5 h-4 w-4 shrink-0 text-warning" />
-                Follow-up suggested: inspect electrical panel
-              </li>
-            </ul>
+            ))}
           </div>
         </div>
       </Container>

@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://fresco.xarp.com/sitemap.xml",
+    sitemap: "https://fresco.xarp.org/sitemap.xml",
   };
 }

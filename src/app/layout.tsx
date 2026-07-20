@@ -17,38 +17,40 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const siteUrl = "https://fresco.xarp.com";
+const siteUrl = "https://fresco.xarp.org";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Fresco AI — Field reports that write themselves.",
+    default: "Fresco AI — To Do Lists that create themselves, and sign themselves off.",
     template: "%s · Fresco AI",
   },
   description:
-    "Fresco AI turns a voice note, a photo, and a video clip from the job site into a structured, professional report — automatically. Built for trades, construction, inspections, and municipal field teams.",
+    "A spoken walk-through becomes a structured To Do List, dispatched to the right team member as a text link, and returned as a verified, signed-off report. Think DocuSign, built for the job site.",
   keywords: [
     "field service management",
     "field service software",
-    "AI field reports",
-    "voice to report",
-    "construction reporting software",
+    "to do list app for teams",
+    "punch list app",
+    "dispatch software",
+    "job sign-off app",
+    "construction punch list software",
     "inspection reporting app",
     "trades management app",
   ],
   openGraph: {
-    title: "Fresco AI — Field reports that write themselves.",
+    title: "Fresco AI — To Do Lists that create themselves, and sign themselves off.",
     description:
-      "Voice note, photo, video — Fresco AI turns it into a structured, reviewed, approved field report automatically.",
+      "Voice, text, or an annotated photo becomes a structured To Do List, dispatched by text link and returned as a verified, signed-off report.",
     url: siteUrl,
     siteName: "Fresco AI",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fresco AI — Field reports that write themselves.",
+    title: "Fresco AI — To Do Lists that create themselves, and sign themselves off.",
     description:
-      "AI-native voice-to-report generation with a real admin review-and-approve workflow.",
+      "A deterministic engine turns a spoken walk-through into a dispatched, signed-off To Do List — with a verified report returned automatically.",
   },
 };
 

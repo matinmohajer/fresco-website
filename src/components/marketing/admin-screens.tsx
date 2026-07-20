@@ -1,4 +1,4 @@
-import { Bell, Home, ListTodo, FolderKanban, Users, Check, X, ArrowUpRight, MessageSquareWarning } from "lucide-react";
+import { Bell, Home, ListTodo, FolderKanban, Users, Check, MessageSquareWarning, Camera, Clock, ListTree, ShieldCheck } from "lucide-react";
 import { StatusPill } from "@/components/ui/status-pill";
 import { cn } from "@/lib/utils";
 
@@ -15,10 +15,10 @@ export function AdminBottomNav({ active }: { active: "home" | "tasks" | "project
       {items.map(({ key, label, icon: Icon }) => (
         <div key={key} className="flex flex-col items-center gap-1">
           <Icon
-            className={cn("h-[18px] w-[18px]", key === active ? "text-[#A78BFA]" : "text-neutral-500")}
+            className={cn("h-[18px] w-[18px]", key === active ? "text-[#4ADE80]" : "text-neutral-500")}
             strokeWidth={key === active ? 2.25 : 1.75}
           />
-          <span className={cn("text-[9px] font-medium", key === active ? "text-[#A78BFA]" : "text-neutral-500")}>
+          <span className={cn("text-[9px] font-medium", key === active ? "text-[#4ADE80]" : "text-neutral-500")}>
             {label}
           </span>
         </div>
@@ -61,11 +61,11 @@ export function DashboardScreen() {
       </div>
 
       <p className="mb-2.5 font-mono text-[10px] font-bold uppercase tracking-[0.14em] text-neutral-500">
-        Recent submissions
+        Recent sign-offs
       </p>
       <div className="flex flex-col gap-2.5">
         {[
-          { site: "Riverside HVAC", worker: "M. Torres", status: "submitted" as const },
+          { site: "Unit 214 — Final Walk", worker: "Sam T.", status: "submitted" as const },
           { site: "Oak St. Site Walk", worker: "D. Kim", status: "in_progress" as const },
           { site: "County Bridge #4", worker: "J. Alvarez", status: "completed" as const },
         ].map((row) => (
@@ -84,44 +84,63 @@ export function DashboardScreen() {
   );
 }
 
-export function VisitReviewScreen() {
+export function CompletionCertificateScreen() {
   return (
     <div className="relative flex h-full flex-col px-5 pb-8 pt-14">
-      <p className="mb-1 text-[10px] font-bold uppercase tracking-widest text-neutral-500">Visit Review</p>
-      <h1 className="mb-4 text-lg font-bold tracking-tight text-white">Riverside HVAC — Unit 2</h1>
+      <p className="mb-1 text-[10px] font-bold uppercase tracking-widest text-neutral-500">Completion Certificate</p>
+      <h1 className="mb-4 text-lg font-bold tracking-tight text-white">Unit 214 · Final Walk</h1>
 
-      <div className="widget-depth mb-3 rounded-2xl p-3.5">
-        <p className="mb-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.14em] text-[#A78BFA]">AI Summary</p>
-        <p className="text-[12.5px] leading-relaxed text-neutral-200">
-          Replaced condenser fan motor and cleared the condensate drain line.
-          Tenant reported intermittent breaker trips in the afternoon.
-        </p>
-      </div>
-
-      <div className="widget-depth mb-3 flex items-start gap-2.5 rounded-2xl p-3.5">
-        <MessageSquareWarning className="mt-0.5 h-4 w-4 shrink-0 text-[#FBBF24]" />
-        <div>
-          <p className="text-[12.5px] font-semibold text-white">Flagged follow-up</p>
-          <p className="text-[11.5px] text-neutral-400">Inspect electrical panel for intermittent trips.</p>
+      <div className="widget-depth mb-2.5 flex items-center justify-between rounded-2xl p-3.5">
+        <div className="flex items-center gap-2.5">
+          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#4ADE80]">
+            <Check className="h-4 w-4 text-[#052e16]" strokeWidth={3} />
+          </span>
+          <div>
+            <p className="text-[12.5px] font-semibold text-white">Touch up drywall — north wall</p>
+            <p className="text-[11px] text-neutral-400">Signed off · photo · 9:42 AM</p>
+          </div>
         </div>
+        <span className="rounded-full bg-[#4ADE80]/15 px-2.5 py-1 text-[10px] font-bold text-[#4ADE80]">DONE</span>
       </div>
 
-      <div className="mb-4 grid grid-cols-3 gap-2">
-        <div className="aspect-square rounded-xl bg-linear-to-br from-white/10 to-white/[0.02]" />
-        <div className="aspect-square rounded-xl bg-linear-to-br from-white/10 to-white/[0.02]" />
-        <div className="aspect-square rounded-xl bg-linear-to-br from-white/10 to-white/[0.02]" />
+      <div className="widget-depth mb-2.5 flex items-center justify-between rounded-2xl p-3.5">
+        <div className="flex items-center gap-2.5">
+          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#4ADE80]">
+            <Check className="h-4 w-4 text-[#052e16]" strokeWidth={3} />
+          </span>
+          <div>
+            <p className="text-[12.5px] font-semibold text-white">Reseat outlet cover — kitchen</p>
+            <p className="text-[11px] text-neutral-400">Signed off · photo · 9:47 AM</p>
+          </div>
+        </div>
+        <span className="rounded-full bg-[#4ADE80]/15 px-2.5 py-1 text-[10px] font-bold text-[#4ADE80]">DONE</span>
       </div>
 
-      <div className="mt-auto flex flex-col gap-2">
-        <button className="fr-reset flex h-11 items-center justify-center gap-2 rounded-xl bg-[#14B8A6] text-[13px] font-bold text-[#04211D]">
-          <Check className="h-4 w-4" /> Approve
-        </button>
-        <button className="fr-reset flex h-11 items-center justify-center gap-2 rounded-xl border border-white/15 text-[13px] font-bold text-white">
-          <ArrowUpRight className="h-4 w-4" /> Approve + Follow-up
-        </button>
-        <button className="fr-reset flex h-11 items-center justify-center gap-2 rounded-xl text-[13px] font-semibold text-[#FB7185]">
-          <X className="h-4 w-4" /> Send Back
-        </button>
+      <div className="widget-depth mb-4 flex items-center justify-between rounded-2xl p-3.5">
+        <div className="flex items-center gap-2.5">
+          <MessageSquareWarning className="h-4 w-4 shrink-0 text-[#FBBF24]" />
+          <div>
+            <p className="text-[12.5px] font-semibold text-white">Replace cracked tile — bath 2</p>
+            <p className="text-[11px] text-neutral-400">Reason: material on order · photo</p>
+          </div>
+        </div>
+        <span className="rounded-full bg-[#FBBF24]/15 px-2.5 py-1 text-[10px] font-bold text-[#FBBF24]">REASON</span>
+      </div>
+
+      <div className="mb-4 flex items-center gap-3 border-t border-white/10 pt-3.5 text-neutral-500">
+        <span className="flex items-center gap-1 text-[10px] font-medium"><Camera className="h-3 w-3" /> Photos</span>
+        <span className="flex items-center gap-1 text-[10px] font-medium"><Clock className="h-3 w-3" /> Timestamps</span>
+        <span className="flex items-center gap-1 text-[10px] font-medium"><ListTree className="h-3 w-3" /> Reasons</span>
+        <span className="flex items-center gap-1 text-[10px] font-medium"><ShieldCheck className="h-3 w-3" /> Audit trail</span>
+      </div>
+
+      <p className="mb-2 font-mono text-[10px] font-bold uppercase tracking-[0.14em] text-neutral-500">Delivered to</p>
+      <div className="flex flex-wrap gap-1.5">
+        {["Dispatcher", "Manager", "Supervisor", "Foreman", "Client / Inspector"].map((who) => (
+          <span key={who} className="rounded-full bg-white/[0.06] px-2.5 py-1 text-[10px] font-semibold text-neutral-300">
+            {who}
+          </span>
+        ))}
       </div>
     </div>
   );
@@ -134,7 +153,7 @@ export function TeamScreen() {
       <h1 className="mb-4 text-lg font-bold tracking-tight text-white">Workers &amp; Invitations</h1>
 
       <div className="mb-4 flex gap-2">
-        <span className="rounded-full bg-[#A78BFA] px-3 py-1.5 text-[11px] font-bold text-[#1a1033]">Workers</span>
+        <span className="rounded-full bg-[#4ADE80] px-3 py-1.5 text-[11px] font-bold text-[#052e16]">Workers</span>
         <span className="rounded-full px-3 py-1.5 text-[11px] font-semibold text-neutral-400">Invites</span>
       </div>
 

@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 /*
-  Fresco AI brand tokens — lifted from the shipping product (constants/theme.ts
-  and the Sprint 3 admin-app export), not invented for the marketing site.
-  Violet is the primary brand/action color in both themes; teal is the
-  secondary "positive / completed" accent, echoing the app's own status colors.
+  Fresco AI brand tokens. Green is the primary brand/action color in both
+  themes — the "signed off / done" color, echoing the completion checkmark in
+  the product. Teal is the secondary accent for in-progress/checked-in state;
+  blue marks "submitted"; amber marks "needs a reason"; rose marks blocked.
 */
 
 :root {
@@ -17,15 +17,19 @@
   --border: #e7e5e4;
   --border-strong: #d6d3d0;
 
-  --primary: #6d28d9;
-  --primary-hover: #5b21b6;
+  --primary: #16a34a;
+  --primary-hover: #15803d;
   --primary-foreground: #ffffff;
-  --primary-tint: #ede9fe;
+  --primary-tint: #dcfce7;
 
   --accent: #0f766e;
   --accent-bright: #14b8a6;
   --accent-foreground: #ffffff;
   --accent-tint: #f0fdfa;
+
+  --info: #2563eb;
+  --info-bg: #eff6ff;
+  --info-border: #bfdbfe;
 
   --warning: #92500e;
   --warning-bg: #fef6d9;
@@ -35,8 +39,8 @@
   --danger-bg: #fee7e9;
   --danger-border: #f6a9b4;
 
-  --card-navy-start: #1a1033;
-  --card-navy-end: #05060a;
+  --card-navy-start: #0e2a1c;
+  --card-navy-end: #05070a;
 
   --shadow-color: 220 20% 10%;
 }
@@ -51,15 +55,19 @@
   --border: #1f2937;
   --border-strong: #374151;
 
-  --primary: #7c3aed;
-  --primary-hover: #8b5cf6;
-  --primary-foreground: #ffffff;
-  --primary-tint: rgba(167, 139, 250, 0.12);
+  --primary: #22c55e;
+  --primary-hover: #4ade80;
+  --primary-foreground: #052e16;
+  --primary-tint: rgba(34, 197, 94, 0.14);
 
   --accent: #5eead4;
   --accent-bright: #2dd4bf;
   --accent-foreground: #04211d;
   --accent-tint: rgba(45, 212, 191, 0.1);
+
+  --info: #60a5fa;
+  --info-bg: rgba(37, 99, 235, 0.15);
+  --info-border: rgba(96, 165, 250, 0.35);
 
   --warning: #fbbf24;
   --warning-bg: rgba(66, 32, 6, 0.55);
@@ -69,8 +77,8 @@
   --danger-bg: rgba(76, 5, 25, 0.4);
   --danger-border: rgba(225, 29, 72, 0.3);
 
-  --card-navy-start: #1a1033;
-  --card-navy-end: #05060a;
+  --card-navy-start: #0e2a1c;
+  --card-navy-end: #05070a;
 }
 
 @theme inline {
@@ -92,6 +100,10 @@
   --color-accent-bright: var(--accent-bright);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent-tint: var(--accent-tint);
+
+  --color-info: var(--info);
+  --color-info-bg: var(--info-bg);
+  --color-info-border: var(--info-border);
 
   --color-warning: var(--warning);
   --color-warning-bg: var(--warning-bg);

@@ -59,7 +59,7 @@ export function DemoRequestForm() {
           value={details}
           onChange={(e) => setDetails(e.target.value)}
           rows={4}
-          placeholder="Team size, industry, current process for field reports..."
+          placeholder="Team size, trade, how you dispatch and sign off work today..."
           className="w-full resize-none rounded-xl border border-border-strong bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-primary"
         />
       </Field>

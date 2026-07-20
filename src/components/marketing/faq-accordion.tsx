@@ -11,15 +11,15 @@ const FAQS = [
   },
   {
     q: "Does Fresco AI work offline?",
-    a: "Yes. Field teams can check in and capture reports without a signal; submissions sync automatically once connectivity is restored.",
+    a: "Yes. Field teams can open a dispatched To Do List and sign off tasks without a signal; sign-offs sync automatically once connectivity is restored.",
   },
   {
-    q: "How does AI generate reports?",
-    a: "Fresco AI transcribes voice input and analyzes accompanying photos/video to draft a structured report, which a supervisor reviews and approves before it's finalized.",
+    q: "How does the To Do List get created?",
+    a: "A manager, supervisor, or foreman speaks, types, or annotates a photo. A deterministic engine transcribes and structures that into a clean, itemized To Do List — the same consistent structure every time.",
   },
   {
-    q: "Who can see submitted reports?",
-    a: "Reports are visible to your organization's admins and supervisors through the admin app, following your organization's configured review workflow.",
+    q: "Who can see completed sign-offs?",
+    a: "Verified completion certificates route automatically to your organization's dispatcher, manager, supervisor, and foreman — and to a client or inspector, if configured.",
   },
   {
     q: "How do I request a demo or get pricing?",

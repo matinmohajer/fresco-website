@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = "https://fresco.xarp.com";
+const baseUrl = "https://fresco.xarp.org";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["", "/about", "/support", "/privacy"];

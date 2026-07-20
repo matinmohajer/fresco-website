@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Mic, Camera, FileCheck2, PhoneCall, ArrowRight, CheckCheck, ListChecks } from "lucide-react";
+import { Mic, Check, FileCheck2, PhoneCall, ArrowRight, CheckCheck, ListChecks } from "lucide-react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -240,10 +240,10 @@ export function Hero() {
       {/* BACKGROUND LAYER: Hero Texts */}
       <div className="hero-text-wrapper absolute z-10 flex w-screen flex-col items-center justify-center px-4 text-center will-change-transform transform-3d">
         <h1 className="text-track gsap-reveal text-3d-matte mb-2 text-5xl font-bold tracking-tight md:text-7xl lg:text-[6rem]">
-          Field reports that
+          To Do Lists that create themselves
         </h1>
         <h1 className="text-days gsap-reveal text-silver-matte text-5xl font-extrabold tracking-tighter md:text-7xl lg:text-[6rem]">
-          write themselves.
+          — and sign themselves off.
         </h1>
       </div>
 
@@ -268,11 +268,11 @@ export function Hero() {
       {/* BACKGROUND LAYER 2: Final CTA */}
       <div className="cta-wrapper gsap-reveal pointer-events-auto absolute z-10 flex w-screen flex-col items-center justify-center px-4 text-center will-change-transform">
         <h2 className="text-silver-matte mb-6 text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">
-          Start reporting in minutes.
+          Start signing off in minutes.
         </h2>
         <p className="mx-auto mb-12 max-w-xl text-lg font-light leading-relaxed text-muted-foreground md:text-xl">
-          No typing. No formatting. No lost details. See Fresco AI turn a
-          voice note into a finished, approved report.
+          No forms. No lost details. See Fresco AI turn a spoken walk-through
+          into a dispatched, signed-off To Do List.
         </p>
         <div className="flex flex-col gap-6 sm:flex-row">
           <a
@@ -284,7 +284,7 @@ export function Hero() {
               <div className="-mb-0.5 text-[10px] font-bold uppercase tracking-wider text-neutral-500">
                 Talk to us
               </div>
-              <div className="text-lg font-bold leading-none tracking-tight">Request a Demo</div>
+              <div className="text-lg font-bold leading-none tracking-tight">Get Started</div>
             </div>
           </a>
           <a
@@ -344,10 +344,10 @@ export function Hero() {
                       <div className="phone-widget mb-8 flex items-center justify-between">
                         <div className="flex flex-col">
                           <span className="mb-1 text-[10px] font-bold uppercase tracking-widest text-neutral-400">
-                            Site Visit
+                            Final Walk
                           </span>
                           <span className="text-xl font-bold tracking-tight text-white drop-shadow-md">
-                            Riverside HVAC
+                            Unit 214
                           </span>
                         </div>
                         <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-sm font-bold text-neutral-200 shadow-lg shadow-black/50">
@@ -358,23 +358,23 @@ export function Hero() {
                       <div className="phone-widget relative mx-auto mb-8 flex h-44 w-44 items-center justify-center drop-shadow-[0_15px_25px_rgba(0,0,0,0.8)]">
                         <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
                           <circle cx="88" cy="88" r="64" fill="none" stroke="rgba(255,255,255,0.03)" strokeWidth="12" />
-                          <circle className="fr-progress-ring" cx="88" cy="88" r="64" fill="none" stroke="#A78BFA" strokeWidth="12" />
+                          <circle className="fr-progress-ring" cx="88" cy="88" r="64" fill="none" stroke="#4ADE80" strokeWidth="12" />
                         </svg>
                         <div className="z-10 flex flex-col items-center text-center">
                           <span className="counter-val text-4xl font-extrabold tracking-tighter text-white">0</span>
-                          <span className="mt-0.5 text-[8px] font-bold uppercase tracking-widest text-violet-200/50">
-                            Min. to Report
+                          <span className="mt-0.5 text-[8px] font-bold uppercase tracking-widest text-emerald-200/50">
+                            of 3 Items Addressed
                           </span>
                         </div>
                       </div>
 
                       <div className="space-y-3">
                         <div className="phone-widget widget-depth flex items-center rounded-2xl p-3">
-                          <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-xl border border-violet-400/20 bg-linear-to-br from-violet-500/20 to-violet-600/5 shadow-inner">
-                            <Camera className="h-4 w-4 text-violet-300 drop-shadow-md" />
+                          <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-400/20 bg-linear-to-br from-emerald-500/20 to-emerald-600/5 shadow-inner">
+                            <Check className="h-4 w-4 text-emerald-400 drop-shadow-md" />
                           </div>
                           <div className="flex-1">
-                            <div className="mb-1.5 text-[11px] font-semibold text-neutral-200">3 photos attached</div>
+                            <div className="mb-1.5 text-[11px] font-semibold text-neutral-200">Touch up drywall — north wall</div>
                             <div className="h-1.5 w-24 rounded-full bg-neutral-700 shadow-inner" />
                           </div>
                         </div>
@@ -383,7 +383,7 @@ export function Hero() {
                             <FileCheck2 className="h-4 w-4 text-emerald-400 drop-shadow-md" />
                           </div>
                           <div className="flex-1">
-                            <div className="mb-1.5 text-[11px] font-semibold text-neutral-200">Report drafted</div>
+                            <div className="mb-1.5 text-[11px] font-semibold text-neutral-200">Reseat outlet cover — kitchen</div>
                             <div className="h-1.5 w-16 rounded-full bg-neutral-700 shadow-inner" />
                           </div>
                         </div>
@@ -400,18 +400,18 @@ export function Hero() {
                     <CheckCheck className="h-4 w-4 text-emerald-300 drop-shadow-lg lg:h-5 lg:w-5" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold tracking-tight text-white lg:text-sm">Report Approved</p>
-                    <p className="text-[10px] font-medium text-violet-200/50 lg:text-xs">By supervisor · 2m ago</p>
+                    <p className="text-xs font-bold tracking-tight text-white lg:text-sm">Signed Off</p>
+                    <p className="text-[10px] font-medium text-emerald-200/50 lg:text-xs">By Sam T. · 9:47 AM</p>
                   </div>
                 </div>
 
                 <div className="floating-badge floating-ui-badge absolute bottom-12 -right-3.75 z-30 flex items-center gap-3 rounded-xl p-3 lg:bottom-20 lg:-right-20 lg:gap-4 lg:rounded-2xl lg:p-4">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full border border-violet-400/30 bg-linear-to-b from-violet-500/20 to-violet-900/10 shadow-inner lg:h-10 lg:w-10">
-                    <ListChecks className="h-4 w-4 text-violet-300 drop-shadow-lg lg:h-5 lg:w-5" />
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full border border-teal-400/30 bg-linear-to-b from-teal-500/20 to-teal-900/10 shadow-inner lg:h-10 lg:w-10">
+                    <ListChecks className="h-4 w-4 text-teal-300 drop-shadow-lg lg:h-5 lg:w-5" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold tracking-tight text-white lg:text-sm">Follow-up Assigned</p>
-                    <p className="text-[10px] font-medium text-violet-200/50 lg:text-xs">Due tomorrow</p>
+                    <p className="text-xs font-bold tracking-tight text-white lg:text-sm">Dispatched</p>
+                    <p className="text-[10px] font-medium text-teal-200/50 lg:text-xs">To: Priya N.</p>
                   </div>
                 </div>
               </div>
@@ -420,11 +420,12 @@ export function Hero() {
             {/* LEFT TEXT */}
             <div className="card-left-text gsap-reveal order-3 z-20 flex w-full flex-col justify-center px-4 text-center lg:order-1 lg:max-w-none lg:px-0 lg:text-left">
               <h3 className="mb-0 text-2xl font-bold tracking-tight text-white md:text-3xl lg:mb-5 lg:text-4xl">
-                Approval, without the back-and-forth.
+                Verified sign-off, without the back-and-forth.
               </h3>
-              <p className="mx-auto hidden max-w-sm text-sm font-normal leading-relaxed text-violet-100/70 md:block md:text-base lg:mx-0 lg:max-w-none lg:text-lg">
-                Fresco AI drafts the report from your team&apos;s voice notes
-                and photos. Supervisors <span className="font-semibold text-white">approve, follow up, or send it back</span> — with a full audit trail from first submission to sign-off.
+              <p className="mx-auto hidden max-w-sm text-sm font-normal leading-relaxed text-emerald-100/70 md:block md:text-base lg:mx-0 lg:max-w-none lg:text-lg">
+                Fresco AI dispatches the To Do List as a text link. Each task
+                closes with a photo or a spoken reason —{" "}
+                <span className="font-semibold text-white">nothing skipped</span> — and a verified report returns automatically, with a full audit trail from dispatch to sign-off.
               </p>
             </div>
           </div>

@@ -19,20 +19,20 @@ export function AvailabilityCta() {
               Be one of the first crews on Fresco AI.
             </h2>
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
-              We&apos;re onboarding early field teams ahead of our public
-              launch. Request a walkthrough and we&apos;ll get your crew set
-              up personally.
+              Want to see it on your own job site? We&apos;re onboarding early
+              field teams ahead of our public launch — reach out and
+              we&apos;ll set up a walkthrough personally.
             </p>
 
             <div className="mt-2 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg">
                 <a href="tel:+18583711421">
                   <PhoneCall className="h-4 w-4" />
-                  Request a Demo
+                  Get Started
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <a href="/support#demo">Get Early Access</a>
+                <a href="/support#demo">Request a Demo</a>
               </Button>
             </div>
 

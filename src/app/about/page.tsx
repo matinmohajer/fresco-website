@@ -7,7 +7,7 @@ import { PageHeader } from "@/components/marketing/page-header";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Fresco AI is developed and operated by XARP, a California company based in San Diego building AI-powered reporting software for field-based industries.",
+    "Fresco AI is developed and operated by XARP, a California company based in San Diego building a voice-first To Do List and sign-off platform for field-based industries.",
 };
 
 export default function AboutPage() {
@@ -15,7 +15,7 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="About Fresco AI"
-        title="Field documentation shouldn't be a second job."
+        title="Field work shouldn't get lost between the walk-through and the crew."
       />
 
       <section className="py-20 sm:py-28">
@@ -23,20 +23,22 @@ export default function AboutPage() {
           <div className="flex flex-col gap-6 lg:col-span-2">
             <p className="text-xl leading-relaxed text-foreground">
               Fresco AI is developed and operated by <strong>XARP</strong>, a
-              California company based in San Diego, CA. XARP builds software
+              California entity based in San Diego, CA. XARP builds software
               for field-based and property-adjacent industries, and Fresco AI
-              is its flagship product: an AI-powered reporting platform for
-              trades, construction, inspection, and municipal field teams.
+              is its flagship product: a voice-first To Do List and sign-off
+              platform for trades, construction, inspection, and municipal
+              field teams.
             </p>
 
             <div className="mt-6 border-t border-border pt-8">
               <h2 className="text-2xl font-semibold text-foreground">Our Approach</h2>
               <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-                Field documentation shouldn&apos;t be a second job. Fresco AI
-                exists to close the gap between the work that happens on-site
-                and the written record of it — using AI to do the writing, so
-                field teams can stay focused on the work itself, and managers
-                can trust what lands in their inbox.
+                A To Do List shouldn&apos;t be a second job to dispatch and a
+                third job to prove. Fresco AI exists to close the loop between
+                assigning work and proving it&apos;s done — a deterministic
+                engine turns a spoken walk-through into a clean, itemized
+                list, so field teams can stay focused on the work itself, and
+                managers can trust what lands back in their inbox.
               </p>
             </div>
           </div>

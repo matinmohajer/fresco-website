@@ -3,17 +3,25 @@ import { cn } from "@/lib/utils";
 export type FrescoStatus =
   | "open"
   | "assigned"
+  | "checked_in"
   | "in_progress"
   | "submitted"
+  | "approved"
   | "completed"
+  | "over_est"
+  | "locked"
   | "cancelled";
 
 const STATUS_CONFIG: Record<FrescoStatus, { label: string; dot: string; text: string }> = {
   open: { label: "Open", dot: "bg-[#9CA3AF]", text: "text-[#9CA3AF]" },
-  assigned: { label: "Assigned", dot: "bg-[#A78BFA]", text: "text-[#A78BFA]" },
+  assigned: { label: "Assigned", dot: "bg-[#9CA3AF]", text: "text-[#9CA3AF]" },
+  checked_in: { label: "Checked in", dot: "bg-[#5EEAD4]", text: "text-[#5EEAD4]" },
   in_progress: { label: "In progress", dot: "bg-[#FBBF24]", text: "text-[#FBBF24]" },
-  submitted: { label: "Submitted", dot: "bg-[#5EEAD4]", text: "text-[#5EEAD4]" },
-  completed: { label: "Completed", dot: "bg-[#14B8A6]", text: "text-[#14B8A6]" },
+  submitted: { label: "Submitted", dot: "bg-[#60A5FA]", text: "text-[#60A5FA]" },
+  approved: { label: "Approved", dot: "bg-[#4ADE80]", text: "text-[#4ADE80]" },
+  completed: { label: "Completed", dot: "bg-[#4ADE80]", text: "text-[#4ADE80]" },
+  over_est: { label: "Over est.", dot: "bg-[#FBBF24]", text: "text-[#FBBF24]" },
+  locked: { label: "Locked", dot: "bg-[#FB7185]", text: "text-[#FB7185]" },
   cancelled: { label: "Cancelled", dot: "bg-[#6B7280]", text: "text-[#6B7280]" },
 };
 

@@ -4,11 +4,11 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { cn } from "@/lib/utils";
 
 const ROWS = [
-  { label: "Voice, photo & video capture", capture: true, scheduling: false, fresco: true },
-  { label: "AI-generated structured reports", capture: false, scheduling: false, fresco: true },
-  { label: "Admin review & approve workflow", capture: false, scheduling: true, fresco: true },
-  { label: "Task assignment & tracking", capture: false, scheduling: true, fresco: true },
-  { label: "Audit trail, submission to sign-off", capture: false, scheduling: false, fresco: true },
+  { label: "Voice, text & photo capture", capture: true, scheduling: false, fresco: true },
+  { label: "Deterministic To Do List engine", capture: false, scheduling: false, fresco: true },
+  { label: "Text-link dispatch, nothing to install", capture: false, scheduling: true, fresco: true },
+  { label: "Offline sign-off with photo or reason", capture: false, scheduling: false, fresco: true },
+  { label: "Verified completion certificate, auto-routed", capture: false, scheduling: false, fresco: true },
 ];
 
 function Cell({ on }: { on: boolean }) {
@@ -26,7 +26,7 @@ export function Differentiator() {
         <SectionHeading
           eyebrow="What Sets Fresco AI Apart"
           title="The combination, not just another point tool."
-          description="Most field tools are either voice/photo capture with no organizational structure, or heavyweight scheduling software with no real AI reporting."
+          description="Most field tools are either voice/photo capture with no organizational structure, or heavyweight scheduling software with no real proof of done."
         />
 
         <div className="mx-auto mt-16 max-w-3xl overflow-hidden rounded-3xl border border-border bg-background">
