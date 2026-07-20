@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Mic, Check, FileCheck2, PhoneCall, ArrowRight, CheckCheck, ListChecks } from "lucide-react";
@@ -8,6 +8,15 @@ import { Mic, Check, FileCheck2, PhoneCall, ArrowRight, CheckCheck, ListChecks }
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
+
+// ScrollTrigger's pin wraps the pinned element in a pin-spacer div outside
+// React's knowledge. If that gets reverted in a passive `useEffect` cleanup,
+// it runs after React has already tried to remove the (now relocated) DOM
+// nodes on unmount, throwing a NotFoundError that crashes client-side nav in
+// Safari/WebKit. useLayoutEffect's cleanup runs synchronously before React
+// detaches the nodes, so the pin is undone first. Fall back to useEffect on
+// the server to avoid React's SSR warning.
+const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 const INJECTED_STYLES = `
   .text-3d-matte {
@@ -149,7 +158,7 @@ export function Hero() {
     };
   }, []);
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const isMobile = window.innerWidth < 768;
 
     const ctx = gsap.context(() => {
