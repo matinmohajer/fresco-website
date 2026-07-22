@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 /*
-  Fresco AI brand tokens. Green is the primary brand/action color in both
-  themes — the "signed off / done" color, echoing the completion checkmark in
-  the product. Teal is the secondary accent for in-progress/checked-in state;
-  blue marks "submitted"; amber marks "needs a reason"; rose marks blocked.
+  Fresco AI brand tokens — teal-led per WD-01. Teal (#0F766E) is the primary
+  brand/action color; green (#047857) is the secondary "signed off / done"
+  accent. Single light theme only — no dark mode. Info/warning/danger are
+  functional status colors (scheduler legend, alerts), not brand accents.
 */
 
 :root {
@@ -17,15 +17,15 @@
   --border: #e7e5e4;
   --border-strong: #d6d3d0;
 
-  --primary: #16a34a;
-  --primary-hover: #15803d;
+  --primary: #0f766e;
+  --primary-hover: #115e59;
   --primary-foreground: #ffffff;
-  --primary-tint: #dcfce7;
+  --primary-tint: #e1f5ee;
 
-  --accent: #0f766e;
-  --accent-bright: #14b8a6;
+  --accent: #047857;
+  --accent-bright: #059669;
   --accent-foreground: #ffffff;
-  --accent-tint: #f0fdfa;
+  --accent-tint: #ecfdf5;
 
   --info: #2563eb;
   --info-bg: #eff6ff;
@@ -43,42 +43,6 @@
   --card-navy-end: #05070a;
 
   --shadow-color: 220 20% 10%;
-}
-
-.dark {
-  --background: #0a0f1a;
-  --surface: #111827;
-  --surface-2: #1f2937;
-  --foreground: #f9fafb;
-  --muted-foreground: #9ca3af;
-  --faint-foreground: #6b7280;
-  --border: #1f2937;
-  --border-strong: #374151;
-
-  --primary: #22c55e;
-  --primary-hover: #4ade80;
-  --primary-foreground: #052e16;
-  --primary-tint: rgba(34, 197, 94, 0.14);
-
-  --accent: #5eead4;
-  --accent-bright: #2dd4bf;
-  --accent-foreground: #04211d;
-  --accent-tint: rgba(45, 212, 191, 0.1);
-
-  --info: #60a5fa;
-  --info-bg: rgba(37, 99, 235, 0.15);
-  --info-border: rgba(96, 165, 250, 0.35);
-
-  --warning: #fbbf24;
-  --warning-bg: rgba(66, 32, 6, 0.55);
-  --warning-border: rgba(251, 191, 36, 0.35);
-
-  --danger: #fb7185;
-  --danger-bg: rgba(76, 5, 25, 0.4);
-  --danger-border: rgba(225, 29, 72, 0.3);
-
-  --card-navy-start: #0e2a1c;
-  --card-navy-end: #05070a;
 }
 
 @theme inline {
@@ -113,8 +77,8 @@
   --color-danger-bg: var(--danger-bg);
   --color-danger-border: var(--danger-border);
 
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-mono-brand);
+  --font-sans: var(--font-arial);
+  --font-mono: var(--font-arial);
 
   --animate-marquee: marquee 32s linear infinite;
 
@@ -128,6 +92,10 @@
   }
 }
 
+:root {
+  --font-arial: Arial, Helvetica, "Liberation Sans", sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -136,9 +104,6 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
 }
 
 ::selection {
@@ -243,6 +208,12 @@ body {
     inset 0 1px 1px rgba(255, 255, 255, 0.06),
     inset 0 -1px 1px rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.widget-depth-light {
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(28, 25, 23, 0.06);
+  border: 1px solid var(--border);
 }
 
 .floating-ui-badge {

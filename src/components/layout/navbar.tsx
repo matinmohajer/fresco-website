@@ -5,14 +5,13 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/ui/logo-mark";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
   { href: "/#how-it-works", label: "How It Works" },
   { href: "/#platform", label: "Platform" },
-  { href: "/#schedule", label: "Schedule" },
+  { href: "/#schedule", label: "Crew Schedule" },
   { href: "/#who-its-for", label: "Who It's For" },
   { href: "/about", label: "About" },
   { href: "/support", label: "Support" },
@@ -56,14 +55,12 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <ThemeToggle />
           <Button asChild size="sm">
             <Link href="/support#demo">Request a Demo</Link>
           </Button>
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <ThemeToggle />
           <button
             type="button"
             aria-label="Toggle menu"

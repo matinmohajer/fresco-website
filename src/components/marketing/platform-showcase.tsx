@@ -14,6 +14,9 @@ const ADMIN_TABS = [
   { key: "team", label: "Team", icon: Users2, Screen: TeamScreen },
 ] as const;
 
+const MOCKUP_CAPTION =
+  "Your company name and logo sit at the top of every list and every report — because these get forwarded to your client.";
+
 export function PlatformShowcase() {
   const [active, setActive] = useState<(typeof ADMIN_TABS)[number]["key"]>("dashboard");
   const ActiveScreen = ADMIN_TABS.find((t) => t.key === active)?.Screen ?? DashboardScreen;
@@ -22,7 +25,7 @@ export function PlatformShowcase() {
     <section id="platform" className="scroll-mt-24 border-t border-border bg-surface py-24 sm:py-32">
       <Container>
         <SectionHeading
-          eyebrow="Built for Two Roles"
+          eyebrow="One Data Model, Two Apps"
           title="One platform, from assignment to proof."
           description="The admin app and the team member link are built from the same data model — a signed-off task shows up as a verified report instantly, no re-entry, no chasing."
         />
@@ -37,7 +40,7 @@ export function PlatformShowcase() {
                 Managers, supervisors &amp; foremen.
               </h3>
               <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-                Create To Do Lists by voice, dispatch them to the right crew
+                Create To Do Lists by voice, dispatch them to the right team
                 member, and receive verified sign-off reports with a full
                 audit trail — across every site and crew, in one place.
               </p>
@@ -68,35 +71,41 @@ export function PlatformShowcase() {
                 becomes the same clean, itemized list every time.
               </li>
               <li>
-                <span className="font-semibold text-foreground">Phone-first crew invites</span> — invite a team member
-                by number with a 48-hour expiry, no account setup required on your end.
+                <span className="font-semibold text-foreground">Phone-first team invites</span> — invite a team
+                member by number. No account setup required on your end.
               </li>
               <li>
-                <span className="font-semibold text-foreground">Night &amp; Sunlight themes</span> — the same admin
-                screens, tuned for the office and for direct sun on a job site.
+                <span className="font-semibold text-foreground">One consistent theme</span> — the same admin
+                screens everywhere, legible in the office and on a job site.
               </li>
             </ul>
           </div>
 
-          <div className="order-1 flex justify-center lg:order-2">
+          <div className="order-1 flex flex-col items-center lg:order-2">
             <div className="relative scale-[0.82] sm:scale-100">
               <PhoneFrame>
                 <ActiveScreen />
               </PhoneFrame>
             </div>
+            <p className="mt-6 max-w-xs text-center text-xs leading-relaxed text-faint-foreground">
+              {MOCKUP_CAPTION}
+            </p>
           </div>
         </div>
 
         <div className="mt-28 grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-8">
-          <div className="flex justify-center">
+          <div className="flex flex-col items-center lg:order-1">
             <div className="relative scale-[0.82] sm:scale-100">
-              <PhoneFrame light>
+              <PhoneFrame>
                 <ToDoListScreen />
               </PhoneFrame>
             </div>
+            <p className="mt-6 max-w-xs text-center text-xs leading-relaxed text-faint-foreground">
+              {MOCKUP_CAPTION}
+            </p>
           </div>
 
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 lg:order-2">
             <div>
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
                 Team Member App &amp; Link
@@ -157,39 +166,54 @@ export function PlatformShowcase() {
 function ToDoListScreen() {
   return (
     <div className="relative flex h-full flex-col px-5 pb-8 pt-14">
-      <p className="mb-1 text-[10px] font-bold uppercase tracking-widest text-[#78716C]">Unit 214 · Final Walk</p>
-      <h1 className="mb-5 text-lg font-bold tracking-tight text-[#1C1917]">To Do List</h1>
+      <div className="mb-3 flex items-center gap-2.5 border-b border-border pb-3">
+        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary text-[10px] font-bold text-primary-foreground">
+          M
+        </span>
+        <div className="min-w-0 flex-1">
+          <p className="truncate text-[11px] font-bold leading-tight text-foreground">Meridian Facilities</p>
+          <p className="text-[9px] leading-tight text-faint-foreground">(619) 555-0139</p>
+        </div>
+      </div>
 
-      <div className="mb-2.5 flex items-center gap-3 rounded-2xl border border-[#E7E5E4] bg-white p-3.5 shadow-sm">
-        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#16A34A]">
+      <p className="mb-1 text-[10px] font-bold uppercase tracking-widest text-faint-foreground">Unit 214 · Final Walk</p>
+      <h1 className="mb-5 text-lg font-bold tracking-tight text-foreground">To Do List</h1>
+
+      <div className="mb-2.5 flex items-center gap-3 rounded-2xl border border-border bg-white p-3.5 shadow-sm">
+        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent">
           <svg viewBox="0 0 12 10" className="h-2.5 w-3" fill="none">
             <path d="M1 5l3 3 7-7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>
         <div className="flex-1">
-          <p className="text-[13px] font-semibold text-[#1C1917]">Touch up drywall — north wall</p>
-          <p className="text-[11px] text-[#78716C]">Signed off · photo · 9:42 AM</p>
+          <p className="text-[13px] font-semibold text-foreground">Touch up drywall — north wall</p>
+          <p className="text-[11px] text-faint-foreground">Signed off · photo · 9:42 AM</p>
         </div>
       </div>
 
-      <div className="mb-4 flex items-center gap-3 rounded-2xl border border-[#E7E5E4] bg-white p-3.5 shadow-sm">
-        <span className="h-6 w-6 shrink-0 rounded-full border-2 border-[#D6D3D0]" />
+      <div className="mb-4 flex items-center gap-3 rounded-2xl border border-border bg-white p-3.5 shadow-sm">
+        <span className="h-6 w-6 shrink-0 rounded-full border-2 border-border-strong" />
         <div className="flex-1">
-          <p className="text-[13px] font-semibold text-[#1C1917]">Replace cracked tile — bath 2</p>
-          <p className="text-[11px] text-[#78716C]">Needs a reason or photo to close</p>
+          <div className="flex items-center justify-between gap-2">
+            <p className="text-[13px] font-semibold text-foreground">Replace cracked tile — bath 2</p>
+            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-tint text-primary">
+              <Mic className="h-3 w-3" />
+            </span>
+          </div>
+          <p className="text-[11px] text-faint-foreground">Needs a reason or photo to close</p>
         </div>
       </div>
 
-      <p className="mb-2 font-mono text-[10px] font-bold uppercase tracking-[0.14em] text-[#A8A29E]">Attach proof</p>
+      <p className="mb-2 font-mono text-[10px] font-bold uppercase tracking-[0.14em] text-faint-foreground">Attach proof</p>
       <div className="grid grid-cols-3 gap-2">
-        <div className="aspect-square rounded-xl bg-[#E7E5E4]" />
-        <div className="aspect-square rounded-xl bg-[#E7E5E4]" />
-        <div className="flex aspect-square items-center justify-center rounded-xl border-2 border-dashed border-[#D6D3D0] text-2xl text-[#A8A29E]">
+        <div className="aspect-square rounded-xl bg-surface-2" />
+        <div className="aspect-square rounded-xl bg-surface-2" />
+        <div className="flex aspect-square items-center justify-center rounded-xl border-2 border-dashed border-border-strong text-2xl text-faint-foreground">
           +
         </div>
       </div>
 
-      <button className="fr-reset mt-auto flex h-12 items-center justify-center rounded-xl bg-[#16A34A] text-[13px] font-bold text-white">
+      <button className="fr-reset mt-auto flex h-12 items-center justify-center rounded-xl bg-primary text-[13px] font-bold text-primary-foreground">
         Sign &amp; Complete
       </button>
     </div>

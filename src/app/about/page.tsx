@@ -22,7 +22,8 @@ export default function AboutPage() {
         <Container className="grid grid-cols-1 gap-16 lg:grid-cols-3">
           <div className="flex flex-col gap-6 lg:col-span-2">
             <p className="text-xl leading-relaxed text-foreground">
-              Fresco AI is developed and operated by <strong>XARP</strong>, a
+              Fresco AI is a general-purpose Field Service Management (FSM)
+              mobile app, developed and operated by <strong>XARP</strong>, a
               California entity based in San Diego, CA. XARP builds software
               for field-based and property-adjacent industries, and Fresco AI
               is its flagship product: a voice-first To Do List and sign-off

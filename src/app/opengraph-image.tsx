@@ -19,7 +19,8 @@ export default async function OpengraphImage() {
           padding: "90px",
           background: "#0A0F1A",
           backgroundImage:
-            "radial-gradient(circle at 78% 25%, rgba(34,197,94,0.32), transparent 55%), radial-gradient(circle at 15% 85%, rgba(20,184,166,0.22), transparent 50%)",
+            "radial-gradient(circle at 78% 25%, rgba(15,118,110,0.35), transparent 55%), radial-gradient(circle at 15% 85%, rgba(4,120,87,0.25), transparent 50%)",
+          fontFamily: "Arial, Helvetica, sans-serif",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 20, marginBottom: 44 }}>
@@ -31,7 +32,7 @@ export default async function OpengraphImage() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              background: "linear-gradient(135deg, #22C55E 0%, #15803D 100%)",
+              background: "linear-gradient(135deg, #0F766E 0%, #047857 100%)",
             }}
           >
             <svg width="38" height="38" viewBox="0 0 40 40" fill="none">
@@ -51,12 +52,12 @@ export default async function OpengraphImage() {
             letterSpacing: "-0.02em",
           }}
         >
-          To Do Lists that create themselves — and sign themselves off.
+          To Do Lists that build themselves — and come back signed.
         </div>
         <div style={{ display: "flex", fontSize: 28, color: "#9CA3AF", marginTop: 28, maxWidth: 820 }}>
-          A spoken walk-through becomes a structured To Do List, dispatched to
-          the right team member, and returned as a verified, signed-off
-          report.
+          A general-purpose FSM mobile app. A spoken walk-through becomes a
+          structured To Do List, dispatched by text link, and returned to the
+          dispatcher signed.
         </div>
       </div>
     ),

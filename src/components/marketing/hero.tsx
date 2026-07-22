@@ -61,14 +61,14 @@ const INJECTED_STYLES = `
       box-shadow: 0 0 0 1px rgba(0,0,0,0.05), 0 6px 12px -2px rgba(0,0,0,0.15), 0 20px 32px -6px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,1), inset 0 -3px 6px rgba(0,0,0,0.06);
   }
   .fr-btn-dark {
-      background: linear-gradient(180deg, #2A2140 0%, #16121F 100%);
+      background: linear-gradient(180deg, #17403c 0%, #0a201d 100%);
       color: #FFFFFF;
-      box-shadow: 0 0 0 1px rgba(167,139,250,0.15), 0 2px 4px rgba(0,0,0,0.6), 0 12px 24px -4px rgba(0,0,0,0.9), inset 0 1px 1px rgba(255,255,255,0.15), inset 0 -3px 6px rgba(0,0,0,0.8);
+      box-shadow: 0 0 0 1px rgba(20,184,166,0.15), 0 2px 4px rgba(0,0,0,0.6), 0 12px 24px -4px rgba(0,0,0,0.9), inset 0 1px 1px rgba(255,255,255,0.15), inset 0 -3px 6px rgba(0,0,0,0.8);
   }
   .fr-btn-dark:hover {
       transform: translateY(-3px);
-      background: linear-gradient(180deg, #362B54 0%, #2A2140 100%);
-      box-shadow: 0 0 0 1px rgba(167,139,250,0.25), 0 6px 12px -2px rgba(0,0,0,0.7), 0 20px 32px -6px rgba(0,0,0,1), inset 0 1px 1px rgba(255,255,255,0.2), inset 0 -3px 6px rgba(0,0,0,0.8);
+      background: linear-gradient(180deg, #1d4f49 0%, #17403c 100%);
+      box-shadow: 0 0 0 1px rgba(20,184,166,0.25), 0 6px 12px -2px rgba(0,0,0,0.7), 0 20px 32px -6px rgba(0,0,0,1), inset 0 1px 1px rgba(255,255,255,0.2), inset 0 -3px 6px rgba(0,0,0,0.8);
   }
 
   .fr-progress-ring {
@@ -164,6 +164,7 @@ export function Hero() {
     const ctx = gsap.context(() => {
       gsap.set(".text-track", { autoAlpha: 0, y: 60, scale: 0.85, filter: "blur(20px)", rotationX: -20 });
       gsap.set(".text-days", { autoAlpha: 1, clipPath: "inset(0 100% 0 0)" });
+      gsap.set(".hero-subhead", { autoAlpha: 0, y: 20 });
       gsap.set(".main-card", { y: window.innerHeight + 200, autoAlpha: 1 });
       gsap.set(
         [".card-left-text", ".card-right-text", ".mockup-scroll-wrapper", ".floating-badge", ".phone-widget"],
@@ -174,7 +175,8 @@ export function Hero() {
       const introTl = gsap.timeline({ delay: 0.3 });
       introTl
         .to(".text-track", { duration: 1.8, autoAlpha: 1, y: 0, scale: 1, filter: "blur(0px)", rotationX: 0, ease: "expo.out" })
-        .to(".text-days", { duration: 1.4, clipPath: "inset(0 0% 0 0)", ease: "power4.inOut" }, "-=1.0");
+        .to(".text-days", { duration: 1.4, clipPath: "inset(0 0% 0 0)", ease: "power4.inOut" }, "-=1.0")
+        .to(".hero-subhead", { duration: 1.2, autoAlpha: 1, y: 0, ease: "power3.out" }, "-=0.6");
 
       const scrollTl = gsap.timeline({
         scrollTrigger: {
@@ -249,11 +251,16 @@ export function Hero() {
       {/* BACKGROUND LAYER: Hero Texts */}
       <div className="hero-text-wrapper absolute z-10 flex w-screen flex-col items-center justify-center px-4 text-center will-change-transform transform-3d">
         <h1 className="text-track gsap-reveal text-3d-matte mb-2 text-5xl font-bold tracking-tight md:text-7xl lg:text-[6rem]">
-          To Do Lists that create themselves
+          To Do Lists that build themselves
         </h1>
-        <h1 className="text-days gsap-reveal text-silver-matte text-5xl font-extrabold tracking-tighter md:text-7xl lg:text-[6rem]">
-          — and sign themselves off.
+        <h1 className="text-days gsap-reveal text-silver-matte text-5xl font-bold tracking-tight md:text-7xl lg:text-[6rem]">
+          — and come back signed.
         </h1>
+        <p className="hero-subhead gsap-reveal mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+          Fresco AI is a general-purpose Field Service Management (FSM)
+          mobile app. A spoken walk-through becomes a structured To Do List,
+          dispatched by text link and returned to the dispatcher signed.
+        </p>
       </div>
 
       {/* SCROLL CUE: hints there's a pinned sequence below, fades on first scroll.
@@ -281,7 +288,7 @@ export function Hero() {
         </h2>
         <p className="mx-auto mb-12 max-w-xl text-lg font-light leading-relaxed text-muted-foreground md:text-xl">
           No forms. No lost details. See Fresco AI turn a spoken walk-through
-          into a dispatched, signed-off To Do List.
+          into a dispatched To Do List that comes back signed.
         </p>
         <div className="flex flex-col gap-6 sm:flex-row">
           <a
@@ -291,20 +298,9 @@ export function Hero() {
             <PhoneCall className="h-5 w-5 shrink-0 transition-transform group-hover:scale-105" />
             <div className="text-left">
               <div className="-mb-0.5 text-[10px] font-bold uppercase tracking-wider text-neutral-500">
-                Talk to us
+                iOS &amp; Android · Coming soon
               </div>
-              <div className="text-lg font-bold leading-none tracking-tight">Get Started</div>
-            </div>
-          </a>
-          <a
-            href="#how-it-works"
-            className="fr-btn-dark group flex items-center justify-center gap-3 rounded-[1.25rem] px-8 py-4 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
-          >
-            <div className="text-left">
-              <div className="-mb-0.5 text-[10px] font-bold uppercase tracking-wider text-neutral-400">
-                Curious how?
-              </div>
-              <div className="text-lg font-bold leading-none tracking-tight">See How It Works</div>
+              <div className="text-lg font-bold leading-none tracking-tight">Request a Demo</div>
             </div>
             <ArrowRight className="h-5 w-5 shrink-0 transition-transform group-hover:translate-x-1" />
           </a>
@@ -322,8 +318,8 @@ export function Hero() {
           <div className="relative z-10 flex h-full w-full max-w-7xl flex-col justify-evenly px-4 py-6 lg:grid lg:grid-cols-3 lg:items-center lg:gap-8 lg:px-12 lg:py-0">
             {/* BRAND NAME */}
             <div className="card-right-text gsap-reveal order-1 z-20 flex w-full justify-center lg:order-3 lg:justify-end">
-              <h2 className="text-card-silver-matte text-6xl font-black uppercase tracking-tighter md:text-[6rem] lg:text-[8rem]">
-                Fresco
+              <h2 className="text-card-silver-matte text-5xl font-bold uppercase tracking-tight md:text-6xl lg:text-[4.5rem]">
+                Fresco AI
               </h2>
             </div>
 
@@ -342,9 +338,7 @@ export function Hero() {
                   <div className="hardware-btn absolute -left-0.75 top-55 z-0 h-11.25 w-0.75 rounded-l-md" aria-hidden="true" />
                   <div className="hardware-btn absolute -right-0.75 top-42.5 z-0 h-17.5 w-0.75 scale-x-[-1] rounded-r-md" aria-hidden="true" />
 
-                  <div className="absolute inset-1.75 z-10 overflow-hidden rounded-[2.5rem] bg-[#050914] text-white shadow-[inset_0_0_15px_rgba(0,0,0,1)]">
-                    <div className="screen-glare pointer-events-none absolute inset-0 z-40" aria-hidden="true" />
-
+                  <div className="absolute inset-1.75 z-10 overflow-hidden rounded-[2.5rem] bg-background text-foreground shadow-[inset_0_0_15px_rgba(0,0,0,0.15)]">
                     <div className="absolute left-1/2 top-1.25 z-50 flex h-7 w-25 -translate-x-1/2 items-center justify-end rounded-full bg-black px-3 shadow-[inset_0_-1px_2px_rgba(255,255,255,0.1)]">
                       <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(34,197,94,0.8)]" />
                     </div>
@@ -352,59 +346,59 @@ export function Hero() {
                     <div className="relative flex h-full w-full flex-col pb-8 pl-5 pr-5 pt-12">
                       <div className="phone-widget mb-8 flex items-center justify-between">
                         <div className="flex flex-col">
-                          <span className="mb-1 text-[10px] font-bold uppercase tracking-widest text-neutral-400">
+                          <span className="mb-1 text-[10px] font-bold uppercase tracking-widest text-faint-foreground">
                             Final Walk
                           </span>
-                          <span className="text-xl font-bold tracking-tight text-white drop-shadow-md">
+                          <span className="text-xl font-bold tracking-tight text-foreground">
                             Unit 214
                           </span>
                         </div>
-                        <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-sm font-bold text-neutral-200 shadow-lg shadow-black/50">
+                        <div className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-white text-sm font-bold text-muted-foreground shadow-sm">
                           <Mic className="h-4 w-4" />
                         </div>
                       </div>
 
-                      <div className="phone-widget relative mx-auto mb-8 flex h-44 w-44 items-center justify-center drop-shadow-[0_15px_25px_rgba(0,0,0,0.8)]">
+                      <div className="phone-widget relative mx-auto mb-8 flex h-44 w-44 items-center justify-center">
                         <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
-                          <circle cx="88" cy="88" r="64" fill="none" stroke="rgba(255,255,255,0.03)" strokeWidth="12" />
-                          <circle className="fr-progress-ring" cx="88" cy="88" r="64" fill="none" stroke="#4ADE80" strokeWidth="12" />
+                          <circle cx="88" cy="88" r="64" fill="none" stroke="var(--border)" strokeWidth="12" />
+                          <circle className="fr-progress-ring" cx="88" cy="88" r="64" fill="none" stroke="var(--primary)" strokeWidth="12" />
                         </svg>
                         <div className="z-10 flex flex-col items-center text-center">
-                          <span className="counter-val text-4xl font-extrabold tracking-tighter text-white">0</span>
-                          <span className="mt-0.5 text-[8px] font-bold uppercase tracking-widest text-emerald-200/50">
+                          <span className="counter-val text-4xl font-bold tracking-tight text-foreground">0</span>
+                          <span className="mt-0.5 text-[8px] font-bold uppercase tracking-widest text-faint-foreground">
                             of 3 Items Addressed
                           </span>
                         </div>
                       </div>
 
                       <div className="space-y-3">
-                        <div className="phone-widget widget-depth flex items-center rounded-2xl p-3">
-                          <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-400/20 bg-linear-to-br from-emerald-500/20 to-emerald-600/5 shadow-inner">
-                            <Check className="h-4 w-4 text-emerald-400 drop-shadow-md" />
+                        <div className="phone-widget widget-depth-light flex items-center rounded-2xl p-3">
+                          <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-xl bg-primary-tint">
+                            <Check className="h-4 w-4 text-primary" />
                           </div>
                           <div className="flex-1">
-                            <div className="mb-1.5 text-[11px] font-semibold text-neutral-200">Touch up drywall — north wall</div>
-                            <div className="h-1.5 w-24 rounded-full bg-neutral-700 shadow-inner" />
+                            <div className="mb-1.5 text-[11px] font-semibold text-foreground">Touch up drywall — north wall</div>
+                            <div className="h-1.5 w-24 rounded-full bg-border" />
                           </div>
                         </div>
-                        <div className="phone-widget widget-depth flex items-center rounded-2xl p-3">
-                          <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-400/20 bg-linear-to-br from-emerald-500/20 to-emerald-600/5 shadow-inner">
-                            <FileCheck2 className="h-4 w-4 text-emerald-400 drop-shadow-md" />
+                        <div className="phone-widget widget-depth-light flex items-center rounded-2xl p-3">
+                          <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-xl bg-accent-tint">
+                            <FileCheck2 className="h-4 w-4 text-accent" />
                           </div>
                           <div className="flex-1">
-                            <div className="mb-1.5 text-[11px] font-semibold text-neutral-200">Reseat outlet cover — kitchen</div>
-                            <div className="h-1.5 w-16 rounded-full bg-neutral-700 shadow-inner" />
+                            <div className="mb-1.5 text-[11px] font-semibold text-foreground">Reseat outlet cover — kitchen</div>
+                            <div className="h-1.5 w-16 rounded-full bg-border" />
                           </div>
                         </div>
                       </div>
 
-                      <div className="absolute bottom-2 left-1/2 h-1 w-30 -translate-x-1/2 rounded-full bg-white/20 shadow-[0_1px_2px_rgba(0,0,0,0.5)]" />
+                      <div className="absolute bottom-2 left-1/2 h-1 w-30 -translate-x-1/2 rounded-full bg-border-strong" />
                     </div>
                   </div>
                 </div>
 
-                {/* Floating Glass Badges */}
-                <div className="floating-badge floating-ui-badge absolute -left-3.75 top-6 z-30 flex items-center gap-3 rounded-xl p-3 lg:-left-20 lg:top-12 lg:gap-4 lg:rounded-2xl lg:p-4">
+                {/* Floating Glass Badges — positioned above/beside the bezel, clear of the screen content */}
+                <div className="floating-badge floating-ui-badge absolute -left-4 -top-10 z-30 hidden items-center gap-3 rounded-xl p-3 sm:flex lg:-left-24 lg:-top-8 lg:gap-4 lg:rounded-2xl lg:p-4">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full border border-emerald-400/30 bg-linear-to-b from-emerald-500/20 to-emerald-900/10 shadow-inner lg:h-10 lg:w-10">
                     <CheckCheck className="h-4 w-4 text-emerald-300 drop-shadow-lg lg:h-5 lg:w-5" />
                   </div>
@@ -414,7 +408,7 @@ export function Hero() {
                   </div>
                 </div>
 
-                <div className="floating-badge floating-ui-badge absolute bottom-12 -right-3.75 z-30 flex items-center gap-3 rounded-xl p-3 lg:bottom-20 lg:-right-20 lg:gap-4 lg:rounded-2xl lg:p-4">
+                <div className="floating-badge floating-ui-badge absolute -bottom-10 -right-4 z-30 hidden items-center gap-3 rounded-xl p-3 sm:flex lg:-bottom-6 lg:-right-24 lg:gap-4 lg:rounded-2xl lg:p-4">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full border border-teal-400/30 bg-linear-to-b from-teal-500/20 to-teal-900/10 shadow-inner lg:h-10 lg:w-10">
                     <ListChecks className="h-4 w-4 text-teal-300 drop-shadow-lg lg:h-5 lg:w-5" />
                   </div>

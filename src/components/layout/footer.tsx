@@ -8,9 +8,10 @@ const COLUMNS = [
     links: [
       { href: "/#how-it-works", label: "How It Works" },
       { href: "/#platform", label: "Admin & Team Apps" },
-      { href: "/#schedule", label: "Schedule" },
+      { href: "/#schedule", label: "Crew Schedule" },
       { href: "/#who-its-for", label: "Who It's For" },
-      { href: "/#availability", label: "Availability" },
+      { href: "/#availability", label: "Coverage" },
+      { href: "/pricing", label: "Pricing" },
     ],
   },
   {
@@ -23,7 +24,10 @@ const COLUMNS = [
   },
   {
     title: "Legal",
-    links: [{ href: "/privacy", label: "Privacy Policy" }],
+    links: [
+      { href: "/privacy", label: "Privacy Policy" },
+      { href: "/terms", label: "Terms of Service" },
+    ],
   },
 ];
 
@@ -35,9 +39,9 @@ export function Footer() {
           <div className="col-span-2 flex flex-col gap-4">
             <Logo />
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-              To Do Lists that create themselves — and sign themselves off.
-              A deterministic engine turns a spoken walk-through into a
-              dispatched, verified sign-off report.
+              Fresco AI is a general-purpose Field Service Management (FSM)
+              mobile app. One To Do List structure for every trade —
+              dispatched by text, completed with proof, returned signed.
             </p>
             <p className="text-xs text-faint-foreground">
               Fresco AI is developed and operated by XARP, a California

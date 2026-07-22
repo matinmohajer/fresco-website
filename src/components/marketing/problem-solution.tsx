@@ -86,7 +86,7 @@ export function ProblemSolution() {
                 <Icon className="h-4 w-4 shrink-0 text-white/70" strokeWidth={1.75} />
                 <div>
                   <p className="text-sm font-bold text-white">{title}</p>
-                  <p className="text-xs leading-snug text-white/70">{description}</p>
+                  <p className="text-xs leading-snug text-white/90">{description}</p>
                 </div>
               </div>
             ))}

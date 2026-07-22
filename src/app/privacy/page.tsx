@@ -124,9 +124,9 @@ export default function PrivacyPage() {
 
             <PolicySection number="7" title="Children's Privacy">
               <p>
-                Fresco AI is a business tool intended for use by employees of
-                client organizations and is not directed at or intended for
-                use by children.
+                Fresco AI is a business tool intended for use by team members
+                of client organizations and is not directed at or intended
+                for use by children.
               </p>
             </PolicySection>
 

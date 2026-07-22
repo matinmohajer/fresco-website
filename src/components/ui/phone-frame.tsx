@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
-function StatusBar({ light = false }: { light?: boolean }) {
-  const color = light ? "#1C1917" : "#F9FAFB";
+function StatusBar() {
+  const color = "var(--foreground)";
   return (
     <div
       className="pointer-events-none absolute inset-x-0 top-0 z-30 flex h-11 items-center justify-between px-7"
@@ -28,12 +28,10 @@ function StatusBar({ light = false }: { light?: boolean }) {
 
 export function PhoneFrame({
   children,
-  light = false,
   className,
   screenClassName,
 }: {
   children: React.ReactNode;
-  light?: boolean;
   className?: string;
   screenClassName?: string;
 }) {
@@ -51,16 +49,14 @@ export function PhoneFrame({
 
       <div
         className={cn(
-          "relative z-10 flex-1 overflow-hidden rounded-[2.5rem] text-white shadow-[inset_0_0_15px_rgba(0,0,0,1)]",
-          light ? "bg-[#FAFAF9]" : "bg-[#050914]",
+          "relative z-10 flex-1 overflow-hidden rounded-[2.5rem] bg-background text-foreground shadow-[inset_0_0_15px_rgba(0,0,0,0.15)]",
           screenClassName
         )}
       >
-        <div className="screen-glare pointer-events-none absolute inset-0 z-40" />
         <div className="absolute left-1/2 top-1.25 z-50 flex h-7 w-25 -translate-x-1/2 items-center justify-end rounded-full bg-black px-3">
           <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
         </div>
-        <StatusBar light={light} />
+        <StatusBar />
         <div className="relative h-full w-full">{children}</div>
       </div>
     </div>

@@ -10,8 +10,8 @@ export function LogoMark({ className }: { className?: string }) {
     >
       <defs>
         <linearGradient id="fresco-mark-grad" x1="4" y1="4" x2="36" y2="36" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#22C55E" />
-          <stop offset="100%" stopColor="#15803D" />
+          <stop offset="0%" stopColor="var(--primary)" />
+          <stop offset="100%" stopColor="var(--accent)" />
         </linearGradient>
       </defs>
       <rect width="40" height="40" rx="11" fill="url(#fresco-mark-grad)" />

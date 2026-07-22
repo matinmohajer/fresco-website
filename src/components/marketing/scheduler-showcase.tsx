@@ -21,7 +21,6 @@ const CREW: CrewRow[] = [
   { name: "Tomas L", meta: "running long", task: "Electrical rough-in", time: "9a – 1p", status: "over_est", barLeft: 28, barWidth: 34 },
   { name: "Dev R", meta: "not started", task: "Repair main line — 402 Oak", time: "1p – 3p", status: "assigned", barLeft: 58, barWidth: 20 },
   { name: "Luis R", meta: "can't get in", task: "Backflow cert — 402 Oak", time: "9a – 11a", status: "locked", barLeft: 12, barWidth: 22, flagged: true },
-  { name: "Jordan K", meta: "free", task: "Unassigned", time: "—", status: "open", barLeft: 0, barWidth: 0 },
 ];
 
 const LEGEND: { label: string; status: FrescoStatus }[] = [
@@ -40,7 +39,7 @@ export function SchedulerShowcase() {
         <SectionHeading
           eyebrow="The Scheduler"
           title="Every team member's day, on one live board."
-          description="The dispatcher sees each team member's tasks, durations, and status across the day or week — what's checked in, what's running long, and what still needs attention — without chasing a single update."
+          description="The dispatcher sees each team member's tasks, durations, and status across the day — what's checked in, what's running long, and what still needs attention — without chasing a single update."
         />
 
         <div className="mt-16 overflow-hidden rounded-3xl border border-border bg-background shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)]">

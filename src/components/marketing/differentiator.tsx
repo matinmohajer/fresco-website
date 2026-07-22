@@ -8,7 +8,7 @@ const ROWS = [
   { label: "Deterministic To Do List engine", capture: false, scheduling: false, fresco: true },
   { label: "Text-link dispatch, nothing to install", capture: false, scheduling: true, fresco: true },
   { label: "Offline sign-off with photo or reason", capture: false, scheduling: false, fresco: true },
-  { label: "Verified completion certificate, auto-routed", capture: false, scheduling: false, fresco: true },
+  { label: "Verified completion certificate to the dispatcher", capture: false, scheduling: false, fresco: true },
 ];
 
 function Cell({ on }: { on: boolean }) {
