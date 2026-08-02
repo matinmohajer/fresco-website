@@ -1,25 +1,24 @@
 "use client";
 
 import { useState } from "react";
-import { LayoutDashboard, ShieldCheck, Users2, Mic, MessageSquareText, Camera, Wifi, WifiOff } from "lucide-react";
+import { Home, CalendarDays, Users2, Mic, MessageSquareText, Camera, KeyRound, Check, FileCheck2 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { PhoneFrame } from "@/components/ui/phone-frame";
-import { DashboardScreen, CompletionCertificateScreen, TeamScreen } from "@/components/marketing/admin-screens";
+import { HomeScreen, ScheduleScreen, TeamScreen, FrescoHeader } from "@/components/marketing/admin-screens";
 import { cn } from "@/lib/utils";
 
 const ADMIN_TABS = [
-  { key: "dashboard", label: "Dashboard", icon: LayoutDashboard, Screen: DashboardScreen },
-  { key: "certificate", label: "Completion Certificate", icon: ShieldCheck, Screen: CompletionCertificateScreen },
+  { key: "home", label: "Home", icon: Home, Screen: HomeScreen },
+  { key: "schedule", label: "Schedule", icon: CalendarDays, Screen: ScheduleScreen },
   { key: "team", label: "Team", icon: Users2, Screen: TeamScreen },
 ] as const;
 
-const MOCKUP_CAPTION =
-  "Your company name and logo sit at the top of every list and every report — because these get forwarded to your client.";
+const MOCKUP_CAPTION = "These are the actual Fresco AI screens — not simplified mockups.";
 
 export function PlatformShowcase() {
-  const [active, setActive] = useState<(typeof ADMIN_TABS)[number]["key"]>("dashboard");
-  const ActiveScreen = ADMIN_TABS.find((t) => t.key === active)?.Screen ?? DashboardScreen;
+  const [active, setActive] = useState<(typeof ADMIN_TABS)[number]["key"]>("home");
+  const ActiveScreen = ADMIN_TABS.find((t) => t.key === active)?.Screen ?? HomeScreen;
 
   return (
     <section id="platform" className="scroll-mt-24 border-t border-border bg-surface py-24 sm:py-32">
@@ -82,7 +81,7 @@ export function PlatformShowcase() {
           </div>
 
           <div className="order-1 flex flex-col items-center lg:order-2">
-            <div className="relative scale-[0.82] sm:scale-100">
+            <div className="relative scale-[0.7] sm:scale-100">
               <PhoneFrame>
                 <ActiveScreen />
               </PhoneFrame>
@@ -95,7 +94,7 @@ export function PlatformShowcase() {
 
         <div className="mt-28 grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-8">
           <div className="flex flex-col items-center lg:order-1">
-            <div className="relative scale-[0.82] sm:scale-100">
+            <div className="relative scale-[0.7] sm:scale-100">
               <PhoneFrame>
                 <ToDoListScreen />
               </PhoneFrame>
@@ -114,9 +113,9 @@ export function PlatformShowcase() {
                 Field teams.
               </h3>
               <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-                Open a texted link, work through each task, capture proof,
-                and sign off in minutes — in the app or straight from the
-                link, and even offline, with sync when signal returns.
+                Every To Do List arrives as a texted link — no app store, no
+                account. Yes is one tap; a No just needs a reason before the
+                task can close.
               </p>
             </div>
 
@@ -138,23 +137,23 @@ export function PlatformShowcase() {
 
             <ul className="flex flex-col gap-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2.5">
-                <Mic className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                No app to install — no forms in the field either. Just open the link.
+                <KeyRound className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                Opens with their own initials + birth year — never a one-time code to wait on.
               </li>
               <li className="flex items-start gap-2.5">
-                <WifiOff className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                Works with zero signal; sign-offs queue and sync automatically.
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                Yes is one tap. A No prompts for a reason — text, voice, or photo.
               </li>
               <li className="flex items-start gap-2.5">
-                <Wifi className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                Verified reports land on the dispatcher&apos;s desk the moment you&apos;re back in range.
+                <FileCheck2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                A verified, itemized report — every photo and voice note included — returns straight to the dispatcher.
               </li>
             </ul>
 
             <p className="rounded-2xl border border-dashed border-border-strong bg-surface p-4 text-sm leading-relaxed text-muted-foreground">
               <span className="font-semibold text-foreground">How it feels:</span> &ldquo;You&apos;ve got a To Do List
-              from your foreman.&rdquo; → tap the link → check off tasks, add a photo or a spoken reason → sign off.
-              Done in minutes.
+              from your foreman.&rdquo; → tap the link → enter your password → tap Yes on each task, or add a reason
+              for No → send the report. Done in minutes.
             </p>
           </div>
         </div>
@@ -163,59 +162,76 @@ export function PlatformShowcase() {
   );
 }
 
+const TO_DO_TASKS = [
+  { title: "Replace cracked outlet cover", meta: "Living room, south wall", answered: true },
+  { title: "Re-caulk tub surround", meta: "Main bath", answered: true },
+  { title: "Touch up hallway paint", meta: "Scuffs near unit door — SW 7029", answered: false },
+  { title: "Install door stop", meta: "Bedroom 2", answered: true },
+  { title: "Test smoke detector", meta: "Hallway unit — replace battery if needed", answered: false },
+] as const;
+
 function ToDoListScreen() {
   return (
-    <div className="relative flex h-full flex-col px-5 pb-8 pt-14">
-      <div className="mb-3 flex items-center gap-2.5 border-b border-border pb-3">
-        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary text-[10px] font-bold text-primary-foreground">
-          M
-        </span>
-        <div className="min-w-0 flex-1">
-          <p className="truncate text-[11px] font-bold leading-tight text-foreground">Meridian Facilities</p>
-          <p className="text-[9px] leading-tight text-faint-foreground">(619) 555-0139</p>
+    <div className="relative h-full">
+      <FrescoHeader trailing={<span className="text-xs font-bold text-primary">Checked in 9:02 AM</span>} />
+
+      <div className="px-5 pb-2 pt-3.5">
+        <div className="text-[23px] font-bold tracking-[-0.5px] text-foreground">Today&apos;s To Do List</div>
+        <div className="mt-0.5 text-[12.5px] text-muted-foreground">
+          Cedar Ridge Apartments, Unit 4B · from Dana Whitfield
         </div>
       </div>
 
-      <p className="mb-1 text-[10px] font-bold uppercase tracking-widest text-faint-foreground">Unit 214 · Final Walk</p>
-      <h1 className="mb-5 text-lg font-bold tracking-tight text-foreground">To Do List</h1>
-
-      <div className="mb-2.5 flex items-center gap-3 rounded-2xl border border-border bg-white p-3.5 shadow-sm">
-        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent">
-          <svg viewBox="0 0 12 10" className="h-2.5 w-3" fill="none">
-            <path d="M1 5l3 3 7-7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </span>
-        <div className="flex-1">
-          <p className="text-[13px] font-semibold text-foreground">Touch up drywall — north wall</p>
-          <p className="text-[11px] text-faint-foreground">Signed off · photo · 9:42 AM</p>
-        </div>
-      </div>
-
-      <div className="mb-4 flex items-center gap-3 rounded-2xl border border-border bg-white p-3.5 shadow-sm">
-        <span className="h-6 w-6 shrink-0 rounded-full border-2 border-border-strong" />
-        <div className="flex-1">
-          <div className="flex items-center justify-between gap-2">
-            <p className="text-[13px] font-semibold text-foreground">Replace cracked tile — bath 2</p>
-            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-tint text-primary">
-              <Mic className="h-3 w-3" />
-            </span>
+      <div className="mx-5 flex flex-col">
+        {TO_DO_TASKS.map((task) => (
+          <div key={task.title} className="flex items-center gap-3 py-[11px]">
+            <div className="min-w-0 flex-1">
+              <div className="text-[15.5px] font-bold leading-[1.3] text-foreground">{task.title}</div>
+              <div className="mt-0.5 text-[12.5px] text-muted-foreground">{task.meta}</div>
+            </div>
+            <div className="flex shrink-0 gap-2">
+              <button
+                className={cn(
+                  "h-[46px] w-14 rounded-[9px] text-sm font-bold",
+                  task.answered ? "bg-accent text-white" : "bg-surface-2 text-muted-foreground"
+                )}
+              >
+                Yes
+              </button>
+              <button className="h-[46px] w-14 rounded-[9px] bg-surface-2 text-sm font-bold text-muted-foreground">
+                No
+              </button>
+            </div>
           </div>
-          <p className="text-[11px] text-faint-foreground">Needs a reason or photo to close</p>
+        ))}
+      </div>
+
+      <div className="mx-5 mt-2 pt-2.5">
+        <p className="mb-[7px] text-[11px] font-bold uppercase tracking-[0.3px] text-faint-foreground">
+          Add photo, voice, or note
+        </p>
+        <div className="flex gap-1.5">
+          {[
+            { icon: Mic, label: "Voice" },
+            { icon: MessageSquareText, label: "Text" },
+            { icon: Camera, label: "Photo" },
+          ].map(({ icon: Icon, label }) => (
+            <span
+              key={label}
+              className="flex h-[42px] flex-1 items-center justify-center gap-1.5 rounded-[10px] bg-surface-2 text-[13px] font-bold text-muted-foreground"
+            >
+              <Icon className="h-[15px] w-[15px]" strokeWidth={2.2} />
+              {label}
+            </span>
+          ))}
         </div>
       </div>
 
-      <p className="mb-2 font-mono text-[10px] font-bold uppercase tracking-[0.14em] text-faint-foreground">Attach proof</p>
-      <div className="grid grid-cols-3 gap-2">
-        <div className="aspect-square rounded-xl bg-surface-2" />
-        <div className="aspect-square rounded-xl bg-surface-2" />
-        <div className="flex aspect-square items-center justify-center rounded-xl border-2 border-dashed border-border-strong text-2xl text-faint-foreground">
-          +
-        </div>
+      <div className="absolute inset-x-0 bottom-0 bg-background px-5 pb-8 pt-2.5">
+        <button className="h-11 w-full rounded-[10px] bg-surface-2 text-[15px] font-bold text-faint-foreground">
+          Send report — 3 of 5 answered
+        </button>
       </div>
-
-      <button className="fr-reset mt-auto flex h-12 items-center justify-center rounded-xl bg-primary text-[13px] font-bold text-primary-foreground">
-        Sign &amp; Complete
-      </button>
     </div>
   );
 }

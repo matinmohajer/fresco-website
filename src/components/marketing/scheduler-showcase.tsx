@@ -16,21 +16,14 @@ type CrewRow = {
 };
 
 const CREW: CrewRow[] = [
-  { name: "John M", meta: "3 jobs", task: "Framing inspection", time: "8a – 11a", status: "checked_in", barLeft: 32, barWidth: 22 },
-  { name: "Maria S", meta: "2 jobs", task: "Framing inspection", time: "8a – 10a · Approved", status: "approved", barLeft: 55, barWidth: 25 },
-  { name: "Tomas L", meta: "running long", task: "Electrical rough-in", time: "9a – 1p", status: "over_est", barLeft: 28, barWidth: 34 },
-  { name: "Dev R", meta: "not started", task: "Repair main line — 402 Oak", time: "1p – 3p", status: "assigned", barLeft: 58, barWidth: 20 },
-  { name: "Luis R", meta: "can't get in", task: "Backflow cert — 402 Oak", time: "9a – 11a", status: "locked", barLeft: 12, barWidth: 22, flagged: true },
+  { name: "Marcus Bell", meta: "Cedar Ridge Apt 4B", task: "Unit 4B turnover", time: "9a – 1p", status: "checked_in", barLeft: 25, barWidth: 30 },
+  { name: "Sofia Reyes", meta: "Maple Court 2C", task: "Punch list walk", time: "10a – 2p · Submitted", status: "submitted", barLeft: 40, barWidth: 32 },
+  { name: "Devon Carter", meta: "Birchwood Lofts", task: "Move-in prep", time: "1p – 3p", status: "assigned", barLeft: 58, barWidth: 20 },
+  { name: "Priya Shah", meta: "Alder Row Duplex", task: "Backflow check", time: "7a – 9a", status: "no_check_in", barLeft: 8, barWidth: 22, flagged: true },
+  { name: "Jordan Kim", meta: "Link locked", task: "Cedar Ridge cert", time: "9a – 11a", status: "locked", barLeft: 33, barWidth: 22, flagged: true },
 ];
 
-const LEGEND: { label: string; status: FrescoStatus }[] = [
-  { label: "Assigned", status: "assigned" },
-  { label: "Checked in", status: "checked_in" },
-  { label: "Submitted", status: "submitted" },
-  { label: "Approved", status: "approved" },
-  { label: "Over est.", status: "over_est" },
-  { label: "Locked", status: "locked" },
-];
+const LEGEND: FrescoStatus[] = ["assigned", "checked_in", "submitted", "approved", "over_est", "no_check_in", "locked"];
 
 export function SchedulerShowcase() {
   return (
@@ -46,15 +39,15 @@ export function SchedulerShowcase() {
           <div className="flex flex-col gap-4 border-b border-border p-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-base font-semibold text-foreground">Crew schedule</p>
-              <p className="text-sm text-muted-foreground">Meridian Facilities · 8 dispatched</p>
+              <p className="text-sm text-muted-foreground">Meridian Facilities · 5 dispatched</p>
             </div>
             <div className="flex items-center gap-3">
               <span className="inline-flex items-center gap-2 rounded-full border border-border-strong px-3 py-1.5 text-xs font-semibold text-muted-foreground">
                 <CalendarDays className="h-3.5 w-3.5" />
-                Tue, Jul 14
+                Wed, Jul 16
               </span>
               <span className="rounded-full bg-primary px-4 py-1.5 text-xs font-bold text-primary-foreground">
-                Dispatch
+                Send all links now
               </span>
             </div>
           </div>
@@ -63,7 +56,7 @@ export function SchedulerShowcase() {
             <AlertTriangle className="h-4 w-4 shrink-0 text-danger" />
             <p className="text-xs font-semibold uppercase tracking-wide text-danger">Needs attention</p>
             <p className="ml-auto text-xs font-medium text-muted-foreground">
-              Backflow cert overdue · Jul 11 &nbsp;·&nbsp; Repair main line — 402 Oak, unassigned
+              Drywall patch · Maple Court 2C, unassigned &nbsp;·&nbsp; Priya Shah past 7 AM start, no check-in
             </p>
           </div>
 
@@ -76,7 +69,7 @@ export function SchedulerShowcase() {
                   row.flagged && "bg-danger-bg"
                 )}
               >
-                <div className="flex w-40 shrink-0 items-center gap-3">
+                <div className="flex w-44 shrink-0 items-center gap-3">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary-tint text-xs font-bold text-primary">
                     {row.name.split(" ").map((n) => n[0]).join("")}
                   </span>
@@ -87,26 +80,21 @@ export function SchedulerShowcase() {
                 </div>
 
                 <div className="flex-1">
-                  <div className="relative h-6 rounded-full bg-surface-2">
-                    {row.barWidth > 0 ? (
-                      <div
-                        className={cn(
-                          "absolute inset-y-0 flex items-center rounded-full px-3 text-[11px] font-semibold whitespace-nowrap",
-                          row.status === "checked_in" && "bg-accent-tint text-accent",
-                          row.status === "approved" && "bg-primary-tint text-primary",
-                          row.status === "over_est" && "bg-warning-bg text-warning",
-                          row.status === "assigned" && "border border-border-strong bg-background text-muted-foreground",
-                          row.status === "locked" && "bg-danger-bg text-danger"
-                        )}
-                        style={{ left: `${row.barLeft}%`, width: `${row.barWidth}%` }}
-                      >
-                        {row.task}
-                      </div>
-                    ) : (
-                      <div className="absolute inset-0 flex items-center justify-center text-[11px] font-medium text-faint-foreground">
-                        Assign a task →
-                      </div>
-                    )}
+                  <p className="mb-1.5 text-xs font-medium text-muted-foreground">{row.task}</p>
+                  <div className="relative h-3.5 rounded-full bg-surface-2">
+                    <div
+                      className={cn(
+                        "absolute inset-y-0 rounded-full",
+                        row.status === "checked_in" && "border-2 border-primary bg-primary/30",
+                        row.status === "submitted" && "bg-info",
+                        row.status === "approved" && "bg-accent",
+                        row.status === "over_est" && "bg-warning",
+                        row.status === "assigned" && "border-2 border-border-strong",
+                        row.status === "no_check_in" && "border-2 border-danger",
+                        row.status === "locked" && "bg-danger"
+                      )}
+                      style={{ left: `${row.barLeft}%`, width: `${row.barWidth}%` }}
+                    />
                   </div>
                 </div>
 
@@ -119,8 +107,8 @@ export function SchedulerShowcase() {
           </div>
 
           <div className="flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-border px-6 py-4">
-            {LEGEND.map(({ label, status }) => (
-              <span key={label} className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+            {LEGEND.map((status) => (
+              <span key={status} className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
                 <StatusPill status={status} className="bg-transparent! px-0" />
               </span>
             ))}
