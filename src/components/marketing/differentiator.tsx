@@ -4,11 +4,11 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { cn } from "@/lib/utils";
 
 const ROWS = [
-  { label: "Voice, text & photo capture", capture: true, scheduling: false, fresco: true },
-  { label: "Deterministic To Do List engine", capture: false, scheduling: false, fresco: true },
-  { label: "Text-link dispatch, nothing to install", capture: false, scheduling: true, fresco: true },
-  { label: "Offline sign-off with photo or reason", capture: false, scheduling: false, fresco: true },
-  { label: "Verified completion certificate to the dispatcher", capture: false, scheduling: false, fresco: true },
+  { label: "Voice, text & photo capture", capture: true, scheduling: false, carimbo: true },
+  { label: "Deterministic To Do List engine", capture: false, scheduling: false, carimbo: true },
+  { label: "Text-link dispatch, nothing to install", capture: false, scheduling: true, carimbo: true },
+  { label: "Offline sign-off with photo or reason", capture: false, scheduling: false, carimbo: true },
+  { label: "Verified completion certificate to the dispatcher", capture: false, scheduling: false, carimbo: true },
 ];
 
 function Cell({ on }: { on: boolean }) {
@@ -24,7 +24,7 @@ export function Differentiator() {
     <section className="border-t border-border bg-surface py-24 sm:py-32">
       <Container>
         <SectionHeading
-          eyebrow="What Sets Fresco AI Apart"
+          eyebrow="What Sets Carimbo AI Apart"
           title="The combination, not just another point tool."
           description="Most field tools are either voice/photo capture with no organizational structure, or heavyweight scheduling software with no real proof of done."
         />
@@ -37,7 +37,7 @@ export function Differentiator() {
             <div className={cn("relative p-5 text-center text-primary")}>
               <span className="flex items-center justify-center gap-1.5">
                 <Sparkles className="h-3.5 w-3.5" />
-                Fresco AI
+                Carimbo AI
               </span>
             </div>
           </div>
@@ -57,7 +57,7 @@ export function Differentiator() {
                 <Cell on={row.scheduling} />
               </div>
               <div className="bg-primary-tint/40 p-5">
-                <Cell on={row.fresco} />
+                <Cell on={row.carimbo} />
               </div>
             </div>
           ))}

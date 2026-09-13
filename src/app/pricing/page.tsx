@@ -6,13 +6,13 @@ import { PageHeader } from "@/components/marketing/page-header";
 
 export const metadata: Metadata = {
   title: "Pricing",
-  description: "Fresco AI plans for teams of every size — Free, Premium, and Enterprise.",
+  description: "Carimbo AI plans for teams of every size — Free, Premium, and Enterprise.",
 };
 
 const TIERS = [
   {
     name: "Free",
-    tagline: "Try Fresco AI with a small crew.",
+    tagline: "Try Carimbo AI with a small crew.",
     features: [
       "Voice, text & photo To Do Lists",
       "Text-link dispatch to team members",
@@ -48,7 +48,7 @@ export default function PricingPage() {
       <PageHeader
         eyebrow="Pricing"
         title="Plans for teams of every size."
-        description="Fresco AI is still in pre-launch onboarding — reach out for current pricing and to get your crew set up."
+        description="Carimbo AI is still in pre-launch onboarding — reach out for current pricing and to get your crew set up."
       />
 
       <section className="py-20 sm:py-28">

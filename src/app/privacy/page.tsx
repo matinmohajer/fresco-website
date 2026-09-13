@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/marketing/page-header";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How XARP collects, uses, and protects information in connection with the Fresco AI mobile application and related services.",
+    "How XARP collects, uses, and protects information in connection with the Carimbo AI mobile application and related services.",
 };
 
 const SUPPORT_EMAIL = "frescoai@xarp.org";
@@ -30,7 +30,7 @@ export default function PrivacyPage() {
               This Privacy Policy describes how XARP (&ldquo;XARP,&rdquo;
               &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;)
               collects, uses, and protects information in connection with the
-              Fresco AI mobile application and related services (the
+              Carimbo AI mobile application and related services (the
               &ldquo;Service&rdquo;).
             </p>
 
@@ -74,13 +74,13 @@ export default function PrivacyPage() {
 
             <PolicySection number="3" title="AI Processing & Third-Party Service Providers">
               <p>
-                Fresco AI uses third-party AI providers (including
+                Carimbo AI uses third-party AI providers (including
                 speech-to-text services) to transcribe voice recordings; a
                 deterministic engine then structures that transcript into a
                 To Do List and completion certificate. These providers
-                process data solely to deliver Fresco AI&apos;s functionality
+                process data solely to deliver Carimbo AI&apos;s functionality
                 and are bound by contractual data protection obligations.
-                Fresco AI also relies on infrastructure and payment providers
+                Carimbo AI also relies on infrastructure and payment providers
                 to operate the Service, including cloud database/hosting and
                 payment processing partners.
               </p>
@@ -113,7 +113,7 @@ export default function PrivacyPage() {
                 Depending on your location and organization&apos;s policies,
                 you may have the right to access, correct, or request
                 deletion of your personal information. Requests should be
-                directed to your organization&apos;s Fresco AI administrator
+                directed to your organization&apos;s Carimbo AI administrator
                 or to us at{" "}
                 <a href={`mailto:${SUPPORT_EMAIL}`} className="text-primary hover:underline">
                   {SUPPORT_EMAIL}
@@ -124,7 +124,7 @@ export default function PrivacyPage() {
 
             <PolicySection number="7" title="Children's Privacy">
               <p>
-                Fresco AI is a business tool intended for use by team members
+                Carimbo AI is a business tool intended for use by team members
                 of client organizations and is not directed at or intended
                 for use by children.
               </p>

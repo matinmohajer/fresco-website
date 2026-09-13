@@ -8,7 +8,7 @@ export function AvailabilityCta() {
       <Container>
         <div className="relative overflow-hidden rounded-[2.5rem] border border-border-strong bg-linear-to-br from-primary/10 via-background to-accent/10 px-8 py-16 text-center sm:px-16 sm:py-20">
           <div
-            className="bg-grid-fresco pointer-events-none absolute inset-0 opacity-40"
+            className="bg-grid-carimbo pointer-events-none absolute inset-0 opacity-40"
             aria-hidden="true"
           />
           <div className="relative flex flex-col items-center gap-6">
@@ -16,7 +16,7 @@ export function AvailabilityCta() {
               iOS &amp; Android · Coming soon
             </span>
             <h2 className="max-w-2xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-              Be one of the first teams on Fresco AI.
+              Be one of the first teams on Carimbo AI.
             </h2>
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
               Want to see it on your own job site? We&apos;re onboarding early

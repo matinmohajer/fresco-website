@@ -6,11 +6,11 @@ import { cn } from "@/lib/utils";
 
 const FAQS = [
   {
-    q: "Is Fresco AI available for my industry?",
-    a: "Fresco AI is built for trades, construction, inspection, and municipal field teams. If you're unsure whether it fits your workflow, contact us for a walkthrough.",
+    q: "Is Carimbo AI available for my industry?",
+    a: "Carimbo AI is built for trades, construction, inspection, and municipal field teams. If you're unsure whether it fits your workflow, contact us for a walkthrough.",
   },
   {
-    q: "Does Fresco AI work offline?",
+    q: "Does Carimbo AI work offline?",
     a: "Yes. Field teams can open a dispatched To Do List and sign off tasks without a signal; sign-offs sync automatically once connectivity is restored.",
   },
   {

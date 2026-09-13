@@ -30,11 +30,11 @@ export function WhoItsFor() {
           </h2>
           <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             <span className="font-semibold text-foreground">
-              Fresco AI is a general-purpose Field Service Management (FSM) mobile app.
+              Carimbo AI is a general-purpose Field Service Management (FSM) mobile app.
             </span>{" "}
             It doesn&apos;t care what trade you&apos;re in. If a manager, supervisor, or foreman has a
             list of work that needs doing — and needs to know what got done, what didn&apos;t, and
-            why — Fresco AI runs it.
+            why — Carimbo AI runs it.
           </p>
           <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             The structure is the same every time. Only the work changes.
@@ -83,7 +83,7 @@ export function WhoItsFor() {
             about today rather than next month.
           </p>
           <p className="text-base leading-relaxed text-muted-foreground">
-            When a team member flags something outside their list, Fresco AI recognizes which
+            When a team member flags something outside their list, Carimbo AI recognizes which
             trade it belongs to and returns it to the dispatcher as a new To Do List, ready to send
             to the right person.{" "}
             <span className="font-semibold text-foreground">Every completed list is also a walkthrough.</span>

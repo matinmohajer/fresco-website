@@ -9,12 +9,12 @@ export function LogoMark({ className }: { className?: string }) {
       aria-hidden="true"
     >
       <defs>
-        <linearGradient id="fresco-mark-grad" x1="4" y1="4" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+        <linearGradient id="carimbo-mark-grad" x1="4" y1="4" x2="36" y2="36" gradientUnits="userSpaceOnUse">
           <stop offset="0%" stopColor="var(--primary)" />
           <stop offset="100%" stopColor="var(--accent)" />
         </linearGradient>
       </defs>
-      <rect width="40" height="40" rx="11" fill="url(#fresco-mark-grad)" />
+      <rect width="40" height="40" rx="11" fill="url(#carimbo-mark-grad)" />
       <path
         d="M13 20.5l4.8 4.8L27.5 15"
         stroke="white"
@@ -31,7 +31,7 @@ export function Logo({ className, iconClassName }: { className?: string; iconCla
     <span className={cn("inline-flex items-center gap-2.5", className)}>
       <LogoMark className={iconClassName} />
       <span className="flex items-baseline gap-1 text-lg font-bold tracking-tight text-foreground">
-        Fresco
+        Carimbo
         <span className="rounded-md bg-primary-tint px-1.5 py-0.5 text-[11px] font-bold uppercase tracking-wider text-primary">
           AI
         </span>

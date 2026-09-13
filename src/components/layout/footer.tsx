@@ -39,12 +39,12 @@ export function Footer() {
           <div className="col-span-2 flex flex-col gap-4">
             <Logo />
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Fresco AI is a general-purpose Field Service Management (FSM)
+              Carimbo AI is a general-purpose Field Service Management (FSM)
               mobile app. One To Do List structure for every trade —
               dispatched by text, completed with proof, returned signed.
             </p>
             <p className="text-xs text-faint-foreground">
-              Fresco AI is developed and operated by XARP, a California
+              Carimbo AI is developed and operated by XARP, a California
               company based in San Diego, CA.
             </p>
           </div>

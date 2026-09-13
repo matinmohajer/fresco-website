@@ -8,7 +8,7 @@ import { DemoRequestForm } from "@/components/marketing/demo-request-form";
 export const metadata: Metadata = {
   title: "Support",
   description:
-    "Get help with Fresco AI, browse frequently asked questions, or request a demo with the Fresco AI team.",
+    "Get help with Carimbo AI, browse frequently asked questions, or request a demo with the Carimbo AI team.",
 };
 
 const SUPPORT_EMAIL = "frescoai@xarp.org";
@@ -18,7 +18,7 @@ export default function SupportPage() {
     <>
       <PageHeader
         eyebrow="Support"
-        title="Need help with Fresco AI?"
+        title="Need help with Carimbo AI?"
         description="Reach out directly, or browse answers to the questions we hear most from field teams."
       />
 
@@ -50,7 +50,7 @@ export default function SupportPage() {
             </h2>
             <p className="text-lg leading-relaxed text-muted-foreground">
               Tell us a bit about your team and what you&apos;re trying to
-              solve. Alex will follow up personally to walk through Fresco AI
+              solve. Alex will follow up personally to walk through Carimbo AI
               and get you set up for early access.
             </p>
           </div>

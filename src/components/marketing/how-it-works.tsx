@@ -31,7 +31,7 @@ const STEPS = [
     number: "05",
     icon: FileCheck,
     title: "Return",
-    description: "Fresco AI compiles a verified report — photos, reasons, timestamps, completion certificate — sent back automatically.",
+    description: "Carimbo AI compiles a verified report — photos, reasons, timestamps, completion certificate — sent back automatically.",
   },
 ];
 
@@ -40,7 +40,7 @@ export function HowItWorks() {
     <section id="how-it-works" className="scroll-mt-24 border-t border-border py-24 sm:py-32">
       <Container>
         <SectionHeading
-          eyebrow="How Fresco AI Works"
+          eyebrow="How Carimbo AI Works"
           title="Scan. Structure. Sign off."
           description="Five steps, most of them automatic. The only thing a team member does is open the link, work the list, and sign off."
         />

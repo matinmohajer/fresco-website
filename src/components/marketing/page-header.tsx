@@ -11,7 +11,7 @@ export function PageHeader({
 }) {
   return (
     <section className="relative overflow-hidden border-b border-border pb-16 pt-36 sm:pt-44">
-      <div className="bg-grid-fresco pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
+      <div className="bg-grid-carimbo pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
       <Container className="relative flex flex-col items-start gap-5">
         <span className="inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
           <span className="h-1.5 w-1.5 rounded-full bg-primary" />

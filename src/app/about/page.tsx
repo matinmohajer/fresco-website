@@ -7,14 +7,14 @@ import { PageHeader } from "@/components/marketing/page-header";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Fresco AI is developed and operated by XARP, a California company based in San Diego building a voice-first To Do List and sign-off platform for field-based industries.",
+    "Carimbo AI is developed and operated by XARP, a California company based in San Diego building a voice-first To Do List and sign-off platform for field-based industries.",
 };
 
 export default function AboutPage() {
   return (
     <>
       <PageHeader
-        eyebrow="About Fresco AI"
+        eyebrow="About Carimbo AI"
         title="Field work shouldn't get lost between the walk-through and the crew."
       />
 
@@ -22,10 +22,10 @@ export default function AboutPage() {
         <Container className="grid grid-cols-1 gap-16 lg:grid-cols-3">
           <div className="flex flex-col gap-6 lg:col-span-2">
             <p className="text-xl leading-relaxed text-foreground">
-              Fresco AI is a general-purpose Field Service Management (FSM)
+              Carimbo AI is a general-purpose Field Service Management (FSM)
               mobile app, developed and operated by <strong>XARP</strong>, a
               California entity based in San Diego, CA. XARP builds software
-              for field-based and property-adjacent industries, and Fresco AI
+              for field-based and property-adjacent industries, and Carimbo AI
               is its flagship product: a voice-first To Do List and sign-off
               platform for trades, construction, inspection, and municipal
               field teams.
@@ -35,7 +35,7 @@ export default function AboutPage() {
               <h2 className="text-2xl font-semibold text-foreground">Our Approach</h2>
               <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
                 A To Do List shouldn&apos;t be a second job to dispatch and a
-                third job to prove. Fresco AI exists to close the loop between
+                third job to prove. Carimbo AI exists to close the loop between
                 assigning work and proving it&apos;s done — a deterministic
                 engine turns a spoken walk-through into a clean, itemized
                 list, so field teams can stay focused on the work itself, and
@@ -105,7 +105,7 @@ export default function AboutPage() {
                 including Google, Amazon, Meta, and NASA. He later served as
                 VP of Engineering at Lifeproof, where he helped grow the
                 company from $60M to $350M. Today, he is focused on building
-                Fresco AI, a mobile Field Service Management (FSM) platform.
+                Carimbo AI, a mobile Field Service Management (FSM) platform.
               </p>
             </div>
           </div>

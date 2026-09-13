@@ -39,7 +39,7 @@ export default async function OpengraphImage() {
               <path d="M13 20.5l4.8 4.8L27.5 15" stroke="white" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
-          <div style={{ display: "flex", fontSize: 40, fontWeight: 700, color: "#F9FAFB" }}>Fresco AI</div>
+          <div style={{ display: "flex", fontSize: 40, fontWeight: 700, color: "#F9FAFB" }}>Carimbo AI</div>
         </div>
         <div
           style={{

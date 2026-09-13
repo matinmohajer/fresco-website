@@ -190,7 +190,7 @@ export function Hero() {
       });
 
       scrollTl
-        .to([".hero-text-wrapper", ".bg-grid-fresco"], { scale: 1.15, filter: "blur(20px)", opacity: 0.2, ease: "power2.inOut", duration: 2 }, 0)
+        .to([".hero-text-wrapper", ".bg-grid-carimbo"], { scale: 1.15, filter: "blur(20px)", opacity: 0.2, ease: "power2.inOut", duration: 2 }, 0)
         .to(".main-card", { y: 0, ease: "power3.inOut", duration: 2 }, 0)
         .to(".main-card", { width: "100%", height: "100%", borderRadius: "0px", ease: "power3.inOut", duration: 1.5 })
         .fromTo(
@@ -246,7 +246,7 @@ export function Hero() {
     >
       <style dangerouslySetInnerHTML={{ __html: INJECTED_STYLES }} />
       <div className="film-grain" aria-hidden="true" />
-      <div className="bg-grid-fresco pointer-events-none absolute inset-0 z-0 opacity-60" aria-hidden="true" />
+      <div className="bg-grid-carimbo pointer-events-none absolute inset-0 z-0 opacity-60" aria-hidden="true" />
 
       {/* BACKGROUND LAYER: Hero Texts */}
       <div className="hero-text-wrapper absolute z-10 flex w-screen flex-col items-center justify-center px-4 text-center will-change-transform transform-3d">
@@ -257,7 +257,7 @@ export function Hero() {
           — and come back signed.
         </h1>
         <p className="hero-subhead gsap-reveal mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-          Fresco AI is a general-purpose Field Service Management (FSM)
+          Carimbo AI is a general-purpose Field Service Management (FSM)
           mobile app. A spoken walk-through becomes a structured To Do List,
           dispatched by text link and returned to the dispatcher signed.
         </p>
@@ -287,7 +287,7 @@ export function Hero() {
           Start signing off in minutes.
         </h2>
         <p className="mx-auto mb-12 max-w-xl text-lg font-light leading-relaxed text-muted-foreground md:text-xl">
-          No forms. No lost details. See Fresco AI turn a spoken walk-through
+          No forms. No lost details. See Carimbo AI turn a spoken walk-through
           into a dispatched To Do List that comes back signed.
         </p>
         <div className="flex flex-col gap-6 sm:flex-row">
@@ -319,7 +319,7 @@ export function Hero() {
             {/* BRAND NAME */}
             <div className="card-right-text gsap-reveal order-1 z-20 flex w-full justify-center lg:order-3 lg:justify-end">
               <h2 className="text-card-silver-matte text-5xl font-bold uppercase tracking-tight md:text-6xl lg:text-[4.5rem]">
-                Fresco AI
+                Carimbo AI
               </h2>
             </div>
 
@@ -426,7 +426,7 @@ export function Hero() {
                 Verified sign-off, without the back-and-forth.
               </h3>
               <p className="mx-auto hidden max-w-sm text-sm font-normal leading-relaxed text-emerald-100/70 md:block md:text-base lg:mx-0 lg:max-w-none lg:text-lg">
-                Fresco AI dispatches the To Do List as a text link. Each task
+                Carimbo AI dispatches the To Do List as a text link. Each task
                 closes with a photo or a spoken reason —{" "}
                 <span className="font-semibold text-white">nothing skipped</span> — and a verified report returns automatically, with a full audit trail from dispatch to sign-off.
               </p>

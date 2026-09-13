@@ -5,7 +5,7 @@ import { Home, CalendarDays, Users2, Mic, MessageSquareText, Camera, KeyRound, C
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { PhoneFrame } from "@/components/ui/phone-frame";
-import { HomeScreen, ScheduleScreen, TeamScreen, FrescoHeader } from "@/components/marketing/admin-screens";
+import { HomeScreen, ScheduleScreen, TeamScreen, CarimboHeader } from "@/components/marketing/admin-screens";
 import { cn } from "@/lib/utils";
 
 const ADMIN_TABS = [
@@ -14,7 +14,7 @@ const ADMIN_TABS = [
   { key: "team", label: "Team", icon: Users2, Screen: TeamScreen },
 ] as const;
 
-const MOCKUP_CAPTION = "These are the actual Fresco AI screens — not simplified mockups.";
+const MOCKUP_CAPTION = "These are the actual Carimbo AI screens — not simplified mockups.";
 
 export function PlatformShowcase() {
   const [active, setActive] = useState<(typeof ADMIN_TABS)[number]["key"]>("home");
@@ -173,7 +173,7 @@ const TO_DO_TASKS = [
 function ToDoListScreen() {
   return (
     <div className="relative h-full">
-      <FrescoHeader trailing={<span className="text-xs font-bold text-primary">Checked in 9:02 AM</span>} />
+      <CarimboHeader trailing={<span className="text-xs font-bold text-primary">Checked in 9:02 AM</span>} />
 
       <div className="px-5 pb-2 pt-3.5">
         <div className="text-[23px] font-bold tracking-[-0.5px] text-foreground">Today&apos;s To Do List</div>

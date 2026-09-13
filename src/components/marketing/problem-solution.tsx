@@ -63,7 +63,7 @@ export function ProblemSolution() {
               The missing loop between assigning work and proving it&apos;s done.
             </h3>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              A manager speaks or photographs what needs doing. Fresco
+              A manager speaks or photographs what needs doing. Carimbo
               AI&apos;s deterministic engine turns it into a clean, itemized
               To Do List.
             </p>

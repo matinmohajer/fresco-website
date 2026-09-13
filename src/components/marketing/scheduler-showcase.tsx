@@ -1,7 +1,7 @@
 import { AlertTriangle, CalendarDays } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { StatusPill, type FrescoStatus } from "@/components/ui/status-pill";
+import { StatusPill, type CarimboStatus } from "@/components/ui/status-pill";
 import { cn } from "@/lib/utils";
 
 type CrewRow = {
@@ -9,7 +9,7 @@ type CrewRow = {
   meta: string;
   task: string;
   time: string;
-  status: FrescoStatus;
+  status: CarimboStatus;
   barLeft: number;
   barWidth: number;
   flagged?: boolean;
@@ -23,7 +23,7 @@ const CREW: CrewRow[] = [
   { name: "Jordan Kim", meta: "Link locked", task: "Cedar Ridge cert", time: "9a – 11a", status: "locked", barLeft: 33, barWidth: 22, flagged: true },
 ];
 
-const LEGEND: FrescoStatus[] = ["assigned", "checked_in", "submitted", "approved", "over_est", "no_check_in", "locked"];
+const LEGEND: CarimboStatus[] = ["assigned", "checked_in", "submitted", "approved", "over_est", "no_check_in", "locked"];
 
 export function SchedulerShowcase() {
   return (

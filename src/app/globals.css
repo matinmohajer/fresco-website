@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /*
-  Fresco AI brand tokens — teal-led per WD-01. Teal (#0F766E) is the primary
+  Carimbo AI brand tokens — teal-led per WD-01. Teal (#0F766E) is the primary
   brand/action color; green (#047857) is the secondary "signed off / done"
   accent. Single light theme only — no dark mode. Info/warning/danger are
   functional status colors (scheduler legend, alerts), not brand accents.
@@ -119,7 +119,7 @@ body {
   scrollbar-width: none;
 }
 
-.bg-grid-fresco {
+.bg-grid-carimbo {
   background-size: 56px 56px;
   background-image:
     linear-gradient(

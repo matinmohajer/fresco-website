@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/marketing/page-header";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "Terms governing use of the Fresco AI mobile application and related services, provided by XARP.",
+    "Terms governing use of the Carimbo AI mobile application and related services, provided by XARP.",
 };
 
 const SUPPORT_EMAIL = "frescoai@xarp.org";
@@ -15,7 +15,7 @@ export default function TermsPage() {
     <>
       <PageHeader
         eyebrow="Terms of Service"
-        title="The terms for using Fresco AI."
+        title="The terms for using Carimbo AI."
         description={
           <>Effective date: July 20, 2026 · Last updated: July 20, 2026</>
         }
@@ -25,7 +25,7 @@ export default function TermsPage() {
         <Container className="max-w-3xl">
           <div className="mb-10 rounded-2xl border border-warning-border bg-warning-bg px-6 py-4 text-sm leading-relaxed text-warning">
             <strong>Draft pending counsel review.</strong> This page is a
-            working draft of Fresco AI&apos;s Terms of Service. It has not yet
+            working draft of Carimbo AI&apos;s Terms of Service. It has not yet
             been reviewed by an attorney and should not be relied on as final
             until legal counsel has approved it.
           </div>
@@ -33,7 +33,7 @@ export default function TermsPage() {
           <div className="prose-legal flex flex-col gap-10 text-base leading-relaxed text-muted-foreground">
             <p>
               These Terms of Service (&ldquo;Terms&rdquo;) govern access to
-              and use of the Fresco AI mobile application, admin app, and
+              and use of the Carimbo AI mobile application, admin app, and
               related services (the &ldquo;Service&rdquo;), provided by XARP
               (&ldquo;XARP,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or
               &ldquo;our&rdquo;). By creating an account or using the Service,
@@ -43,7 +43,7 @@ export default function TermsPage() {
 
             <PolicySection number="1" title="The Service">
               <p>
-                Fresco AI is a general-purpose Field Service Management (FSM)
+                Carimbo AI is a general-purpose Field Service Management (FSM)
                 mobile app. A manager, supervisor, or foreman creates a To Do
                 List by voice, text, or annotated photo; the Service
                 dispatches it to a team member as a text link; the team

@@ -1,14 +1,14 @@
 import { Home, Calendar, ListTodo, Users, ChevronRight, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export function FrescoHeader({ trailing }: { trailing?: React.ReactNode }) {
+export function CarimboHeader({ trailing }: { trailing?: React.ReactNode }) {
   return (
     <div className="flex items-center gap-2 px-5 pt-12">
       <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-[6px] bg-accent-bright">
         <Check className="h-3 w-3 text-white" strokeWidth={3.4} />
       </span>
       <span className="text-sm font-bold tracking-[-0.2px] text-foreground">
-        Fresco <span className="text-accent-bright">AI</span>
+        Carimbo <span className="text-accent-bright">AI</span>
       </span>
       {trailing ? <span className="ml-auto">{trailing}</span> : null}
     </div>
@@ -43,7 +43,7 @@ export function AdminBottomNav({ active }: { active: "home" | "schedule" | "todo
 export function HomeScreen() {
   return (
     <div className="relative h-full">
-      <FrescoHeader />
+      <CarimboHeader />
 
       <div className="px-5 pb-3.5 pt-4.5">
         <div className="text-[26px] font-bold tracking-[-0.5px] text-foreground">Wednesday, July 16</div>
@@ -126,7 +126,7 @@ const SCHEDULE_LEGEND = [
 export function ScheduleScreen() {
   return (
     <div className="relative h-full">
-      <FrescoHeader />
+      <CarimboHeader />
 
       <div className="flex items-end justify-between gap-2.5 px-5 pb-3 pt-4">
         <div>
@@ -245,7 +245,7 @@ export function ScheduleScreen() {
 export function TeamScreen() {
   return (
     <div className="relative h-full">
-      <FrescoHeader />
+      <CarimboHeader />
 
       <div className="px-5 pb-3.5 pt-4.5">
         <div className="text-2xl font-bold tracking-[-0.5px] text-foreground">Team &amp; Invitations</div>

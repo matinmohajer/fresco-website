@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-export type FrescoStatus =
+export type CarimboStatus =
   | "open"
   | "assigned"
   | "checked_in"
@@ -13,7 +13,7 @@ export type FrescoStatus =
   | "locked"
   | "cancelled";
 
-const STATUS_CONFIG: Record<FrescoStatus, { label: string; dot: string; text: string }> = {
+const STATUS_CONFIG: Record<CarimboStatus, { label: string; dot: string; text: string }> = {
   open: { label: "Open", dot: "bg-[#9CA3AF]", text: "text-muted-foreground" },
   assigned: { label: "Planned", dot: "bg-[#9CA3AF]", text: "text-muted-foreground" },
   checked_in: { label: "Checked in", dot: "bg-[#2DD4BF]", text: "text-primary" },
@@ -31,7 +31,7 @@ export function StatusPill({
   status,
   className,
 }: {
-  status: FrescoStatus;
+  status: CarimboStatus;
   className?: string;
 }) {
   const cfg = STATUS_CONFIG[status];
