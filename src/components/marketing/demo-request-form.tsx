@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const SUPPORT_EMAIL = "frescoai@xarp.org";
+const SUPPORT_EMAIL = "info@carimbo.net";
 
 export function DemoRequestForm() {
   const [name, setName] = useState("");

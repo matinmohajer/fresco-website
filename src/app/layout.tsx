@@ -3,7 +3,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 
-const siteUrl = "https://fresco.xarp.org";
+const siteUrl = "https://carimbo.net";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

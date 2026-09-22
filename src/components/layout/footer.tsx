@@ -78,8 +78,8 @@ export function Footer() {
               (858) 371-1421
             </a>{" "}
             ·{" "}
-            <a href="mailto:frescoai@xarp.org" className="text-foreground hover:text-primary">
-              frescoai@xarp.org
+            <a href="mailto:info@carimbo.net" className="text-foreground hover:text-primary">
+              info@carimbo.net
             </a>
           </p>
         </div>

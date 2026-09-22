@@ -61,8 +61,8 @@ export default function AboutPage() {
               <a href="tel:+18583711421" className="block text-sm text-primary hover:underline">
                 (858) 371-1421
               </a>
-              <a href="mailto:frescoai@xarp.org" className="block text-sm text-primary hover:underline">
-                frescoai@xarp.org
+              <a href="mailto:info@carimbo.net" className="block text-sm text-primary hover:underline">
+                info@carimbo.net
               </a>
             </div>
 

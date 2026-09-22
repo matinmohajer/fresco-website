@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Get help with Carimbo AI, browse frequently asked questions, or request a demo with the Carimbo AI team.",
 };
 
-const SUPPORT_EMAIL = "frescoai@xarp.org";
+const SUPPORT_EMAIL = "info@carimbo.net";
 
 export default function SupportPage() {
   return (

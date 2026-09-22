@@ -23,7 +23,7 @@ const FAQS = [
   },
   {
     q: "How do I request a demo or get pricing?",
-    a: "Contact Alex Paydar at (858) 371-1421 or frescoai@xarp.org, or use the form below and we'll follow up personally.",
+    a: "Contact Alex Paydar at (858) 371-1421 or info@carimbo.net, or use the form below and we'll follow up personally.",
   },
 ];
 

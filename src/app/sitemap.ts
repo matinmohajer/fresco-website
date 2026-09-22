@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = "https://fresco.xarp.org";
+const baseUrl = "https://carimbo.net";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["", "/about", "/support", "/privacy", "/terms", "/pricing"];

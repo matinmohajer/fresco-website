@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "How Carimbo LLC collects, uses, and protects information in connection with the Carimbo AI mobile application and related services.",
 };
 
-const SUPPORT_EMAIL = "frescoai@xarp.org";
+const SUPPORT_EMAIL = "info@carimbo.net";
 
 export default function PrivacyPage() {
   return (

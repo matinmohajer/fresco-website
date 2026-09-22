@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Terms governing use of the Carimbo AI mobile application and related services, provided by Carimbo LLC.",
 };
 
-const SUPPORT_EMAIL = "frescoai@xarp.org";
+const SUPPORT_EMAIL = "info@carimbo.net";
 
 export default function TermsPage() {
   return (
@@ -87,7 +87,7 @@ export default function TermsPage() {
               <p>
                 Current plans are described at{" "}
                 <a href="/pricing" className="text-primary hover:underline">
-                  fresco.xarp.org/pricing
+                  carimbo.net/pricing
                 </a>
                 . Fees, if any, are billed to the organization&apos;s account
                 on the schedule disclosed at signup or in an order form.
