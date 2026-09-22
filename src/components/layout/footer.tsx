@@ -44,7 +44,7 @@ export function Footer() {
               dispatched by text, completed with proof, returned signed.
             </p>
             <p className="text-xs text-faint-foreground">
-              Carimbo AI is developed and operated by XARP, a California
+              Carimbo AI is developed and operated by Carimbo LLC, a California
               company based in San Diego, CA.
             </p>
           </div>
@@ -71,7 +71,7 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-border pt-8 text-xs text-faint-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} XARP. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Carimbo LLC. All rights reserved.</p>
           <p>
             Questions? Alex Paydar ·{" "}
             <a href="tel:+18583711421" className="text-foreground hover:text-primary">

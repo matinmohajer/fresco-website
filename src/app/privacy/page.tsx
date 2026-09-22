@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/marketing/page-header";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How XARP collects, uses, and protects information in connection with the Carimbo AI mobile application and related services.",
+    "How Carimbo LLC collects, uses, and protects information in connection with the Carimbo AI mobile application and related services.",
 };
 
 const SUPPORT_EMAIL = "frescoai@xarp.org";
@@ -27,7 +27,7 @@ export default function PrivacyPage() {
         <Container className="max-w-3xl">
           <div className="prose-legal flex flex-col gap-10 text-base leading-relaxed text-muted-foreground">
             <p>
-              This Privacy Policy describes how XARP (&ldquo;XARP,&rdquo;
+              This Privacy Policy describes how Carimbo LLC (&ldquo;Carimbo LLC,&rdquo;
               &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;)
               collects, uses, and protects information in connection with the
               Carimbo AI mobile application and related services (the
@@ -142,7 +142,7 @@ export default function PrivacyPage() {
               <p>
                 Questions about this Privacy Policy or your data:
                 <br />
-                <strong className="text-foreground">XARP</strong>
+                <strong className="text-foreground">Carimbo LLC</strong>
                 <br />
                 <a href={`mailto:${SUPPORT_EMAIL}`} className="text-primary hover:underline">
                   {SUPPORT_EMAIL}

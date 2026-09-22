@@ -7,7 +7,7 @@ import { PageHeader } from "@/components/marketing/page-header";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Carimbo AI is developed and operated by XARP, a California company based in San Diego building a voice-first To Do List and sign-off platform for field-based industries.",
+    "Carimbo AI is developed and operated by Carimbo LLC, a California company based in San Diego building a voice-first To Do List and sign-off platform for field-based industries.",
 };
 
 export default function AboutPage() {
@@ -23,8 +23,8 @@ export default function AboutPage() {
           <div className="flex flex-col gap-6 lg:col-span-2">
             <p className="text-xl leading-relaxed text-foreground">
               Carimbo AI is a general-purpose Field Service Management (FSM)
-              mobile app, developed and operated by <strong>XARP</strong>, a
-              California entity based in San Diego, CA. XARP builds software
+              mobile app, developed and operated by <strong>Carimbo LLC</strong>, a
+              California entity based in San Diego, CA. The company builds software
               for field-based and property-adjacent industries, and Carimbo AI
               is its flagship product: a voice-first To Do List and sign-off
               platform for trades, construction, inspection, and municipal
@@ -50,7 +50,7 @@ export default function AboutPage() {
                 <MapPin className="h-[18px] w-[18px]" />
               </span>
               <div>
-                <p className="text-sm font-semibold text-foreground">XARP</p>
+                <p className="text-sm font-semibold text-foreground">Carimbo LLC</p>
                 <p className="text-xs text-muted-foreground">San Diego, CA</p>
               </div>
             </div>
@@ -88,16 +88,16 @@ export default function AboutPage() {
               </span>
               <div className="lg:hidden">
                 <p className="text-lg font-semibold text-foreground">Alex Paydar</p>
-                <p className="text-sm text-muted-foreground">Founder &amp; CEO, XARP</p>
+                <p className="text-sm text-muted-foreground">Founder &amp; CEO, Carimbo LLC</p>
               </div>
             </div>
             <div className="flex flex-col gap-4">
               <div className="hidden lg:block">
                 <p className="text-lg font-semibold text-foreground">Alex Paydar</p>
-                <p className="text-sm text-muted-foreground">Founder &amp; CEO, XARP</p>
+                <p className="text-sm text-muted-foreground">Founder &amp; CEO, Carimbo LLC</p>
               </div>
               <p className="text-base leading-relaxed text-muted-foreground">
-                Alex Paydar, founder and CEO of XARP, is a veteran of the
+                Alex Paydar, founder and CEO of Carimbo LLC, is a veteran of the
                 computer industry and a lifelong entrepreneur. He got his
                 start in the early days of Apple, then joined Sun
                 Microsystems (now part of Oracle), where he developed data
